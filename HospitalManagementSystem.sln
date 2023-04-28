@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalManagementSystem", "HospitalManagementSystem\HospitalManagementSystem.csproj", "{D175F06D-DD52-437A-8C4A-25DFA43C167D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HospitalManagementSystem.UI", "HospitalManagementSystem\HospitalManagementSystem.UI.csproj", "{D175F06D-DD52-437A-8C4A-25DFA43C167D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalManagementSystem.DataAccess", "HospitalManagementSystem.DataAccess\HospitalManagementSystem.DataAccess.csproj", "{BC260E5F-B04A-4E4C-ACEF-82F88C5C5DBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HospitalManagementSystem.DataAccess", "HospitalManagementSystem.DataAccess\HospitalManagementSystem.DataAccess.csproj", "{BC260E5F-B04A-4E4C-ACEF-82F88C5C5DBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalManagementSystem.Business", "HospitalManagementSystem.Business\HospitalManagementSystem.Business.csproj", "{B476842B-CCD4-4CFC-BF48-052A78001E21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HospitalManagementSystem.Business", "HospitalManagementSystem.Business\HospitalManagementSystem.Business.csproj", "{B476842B-CCD4-4CFC-BF48-052A78001E21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalManagementSystem.Entities", "HospitalManagementSystem.Entities\HospitalManagementSystem.Entities.csproj", "{46C64C22-0FF3-43D3-98A4-BA810654104A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HospitalManagementSystem.Entities", "HospitalManagementSystem.Entities\HospitalManagementSystem.Entities.csproj", "{46C64C22-0FF3-43D3-98A4-BA810654104A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HospitalManagementSystem.Core", "HospitalManagementSystem.Core\HospitalManagementSystem.Core.csproj", "{2B5388CC-4890-4E95-9F1D-B2EF145EB985}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HospitalManagementSystem.Core", "HospitalManagementSystem.Core\HospitalManagementSystem.Core.csproj", "{2B5388CC-4890-4E95-9F1D-B2EF145EB985}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
