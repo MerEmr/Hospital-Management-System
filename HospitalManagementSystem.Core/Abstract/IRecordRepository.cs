@@ -9,5 +9,5 @@ namespace HospitalManagementSystem.Core.Abstract
 {
     public interface IRecordRepository: IGenericRepository<Record>
     {
-    }
+    } 
 }
