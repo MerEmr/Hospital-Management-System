@@ -12,7 +12,7 @@ namespace HospitalManagementSystem.DataAccess.Concrete
     {
         public AppointmentRepository(HospitalDbContext _dbContext):base(_dbContext)
         {
-
+             
         }
     }
 }

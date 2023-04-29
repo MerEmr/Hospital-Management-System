@@ -12,7 +12,7 @@ namespace HospitalManagementSystem.DataAccess.Concrete
     {
         public UserRepository(HospitalDbContext dbContext ): base( dbContext )
         {
-
+             
         }
     }
 }

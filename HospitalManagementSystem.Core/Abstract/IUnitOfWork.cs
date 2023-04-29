@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace HospitalManagementSystem.Core.Abstract
 {
     public interface IUnitOfWork
-    {
+    { 
         IAppointmentRepository Appointments { get; }
         IRecordRepository Records { get; }
         IRoleRepository Roles { get; }

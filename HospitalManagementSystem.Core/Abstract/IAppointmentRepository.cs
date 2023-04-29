@@ -8,6 +8,6 @@ using System.Threading.Tasks;
 namespace HospitalManagementSystem.Core.Abstract
 {
     public interface IAppointmentRepository:IGenericRepository<Appointment>
-    {
+    { 
     }
 }

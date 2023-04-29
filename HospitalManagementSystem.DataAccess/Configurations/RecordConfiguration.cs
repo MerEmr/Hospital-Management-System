@@ -19,7 +19,7 @@ namespace HospitalManagementSystem.DataAccess.Configurations
             builder.Property(x => x.Address).IsRequired().HasMaxLength(300);
             builder.Property(x => x.BloodType).IsRequired().HasMaxLength(20);
             builder.Property(x => x.Allergy).IsRequired().HasMaxLength(100);
-
+             
         }
     }
 }
