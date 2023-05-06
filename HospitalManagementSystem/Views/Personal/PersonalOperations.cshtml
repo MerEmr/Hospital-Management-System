@@ -1,0 +1,270 @@
+﻿
+@{
+    ViewData["Title"] = "PersonalOperations";
+    Layout = "~/Views/Shared/AdminPanelLayout.cshtml";
+}
+
+@{
+    ViewData["Title"] = "PatientOperations";
+    Layout = "~/Views/Shared/AdminPanelLayout.cshtml";
+}
+<!doctype html>
+<html lang="en">
+
+
+<body data-sidebar="dark">
+
+    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
+    <!-- Begin page -->
+    <div id="layout-wrapper">
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+
+            <div class="page-content">
+                <div class="container-fluid">
+                    <!-- start page title -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                <h4 class="mb-sm-0">PERSONAL PANEL </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end page title -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Personal Registration</h4>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mt-2">
+                                                <label for="example-password-input"
+                                                       class=" col-form-label">Firstname</label>
+                                                <input type="text" class="form-control" id="txtPName" name="txtPName">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mt-2">
+                                                <label for="example-password-input" class=" col-form-label">LastName</label>
+                                                <input type="text" class="form-control" id="txtPLastname"
+                                                       name="txtPLastname">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mt-2">
+                                                <label for="example-password-input" class=" col-form-label">TC Id Number</label>
+                                                <input type="text" class="form-control" id="txtTcId"
+                                                       name="txtTcId">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mt-2">
+                                            <label for="example-password-input" class="col-md-2 col-form-label">Tel</label>
+                                            <input class="form-control" type="tel" placeholder="0-(555)-555-5555"
+                                                   id="example-tel-input">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col md-6 mt-2">
+                                            <label for="example-email-input" class="col-form-label">Email</label>
+                                            <input class="form-control" type="email" value="Ogmerem@example.com"
+                                                   id="example-email-input">
+                                        </div>
+                                        <div class="col-md-6 mt-2">
+                                            <label for="example-password-input" class="col-form-label">Password</label>
+                                            <input class="form-control" type="password"
+                                                   id="example-password-input">
+                                        </div>
+                                    </div>
+
+                                    <button class="btn btn-primary mt-4" type="submit">Save</button>
+                                </div>
+                            </div><!-- end card -->
+                        </div>
+                        <div class="col-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Personal List</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table id="datatable-button" name="datatable-button"
+                                               class="table table-striped">
+                                            <thead>
+                                                <tr>
+
+                                                    <th>Edit&nbsp;& Active/Passive</th>
+                                                    <th>FirstName</th>
+                                                    <th>LastName</th>
+                                                    <th>Tc Id Number</th>
+                                                    <th>Tel</th>
+                                                    <th>Email</th>
+                                                    <th>Role</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr data-id="1">
+                                                    <td style="width: 100px">
+                                                        <a class="btn btn-outline-success btn-sm edit"
+                                                           title="Düzenle"
+                                                           data-bs-toggle="modal"
+                                                           data-bs-target=".bs-example-modal-lg">
+                                                            <i class="fas fa-pencil-alt"></i>
+                                                        </a>
+
+                                                        <a class="btn btn-outline-danger btn-sm edit"
+                                                           data-bs-toggle="modal"
+                                                           data-bs-target="#deletemodal">
+                                                            <i class="fas fa-power-off"></i>
+                                                        </a>
+                                                    </td>
+                                                    <td data-field="dataFirstName">Mert Umut</td>
+                                                    <td data-field="dataLastName">Yalpı</td>
+                                                    <td data-field="dataTcIdNumber">32345678964</td>
+                                                    <td data-field="dataTel">05319289752</td>
+                                                    <td data-field="dataEmail">mertumut01@hotmail.com</td>
+                                                    <td data-field="dataEmail">Personal</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- end col -->
+                    </div>
+
+                </div> <!-- container-fluid -->
+            </div>
+            <div id="editModal" name="editModal" class="modal fade bs-example-modal-lg" tabindex="-1"
+                 role="dialog" aria-labelledby="myExtraLargeModalLabel"
+                 aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myExtraLargeModalLabel">
+                                Günlük Ödeme Hareketleri
+                            </h5>
+                            <button type="button" class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h4 class="card-title">Personal Registration</h4>
+                                        </div>
+
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="mt-2">
+                                                        <label for="example-password-input"
+                                                               class=" col-form-label">Firstname</label>
+                                                        <input type="text" class="form-control" id="txtPtNameModal" name="txtPtNameModal">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="mt-2">
+                                                        <label for="example-password-input" class=" col-form-label">LastName</label>
+                                                        <input type="text" class="form-control" id="txtPtLastnameModal"
+                                                               name="txtPtLastnameModal">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="mt-2">
+                                                        <label for="example-password-input" class=" col-form-label">
+                                                            TC Id
+                                                            Number
+                                                        </label>
+                                                        <input type="text" class="form-control" id="txtTcIdModal"
+                                                               name="txtTcIdModal">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mt-2">
+                                                    <label for="example-password-input" class="col-md-2 col-form-label">Tel</label>
+                                                    <input class="form-control" type="tel" placeholder="0-(555)-555-5555"
+                                                           id="txtTelModal" name="txtTelModal">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col md-6 mt-2">
+                                                    <label for="example-email-input" class="col-form-label">Email</label>
+                                                    <input class="form-control" type="email" value="Ogmerem@example.com"
+                                                           id="txtEmailModal" name="txtEmailModal">
+                                                </div>
+                                                <div class="col-md-6 mt-2">
+                                                    <label for="example-password-input" class="col-form-label">Password</label>
+                                                    <input class="form-control" type="password" value="hunter2"
+                                                           id="txtPasswordModal" name="txtPasswordModal">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- end card -->
+                                </div>
+                            </div>
+                        </div><!-- /.modal-content -->
+                        <div class="card-footer d-grid">
+                            <button type="submit"
+                                    class="btn btn-success btn-block waves-effect waves-light">
+                                <i class="ri-check-line align-middle me-2"></i> Update
+                            </button>
+                        </div>
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+            </div><!-- /.modal -->
+            <!-- End Page-content -->
+            <div id="deletemodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+
+                    <div class="modal-content">
+                        <div class="modal-header bg-info ">
+                            <h5 class="modal-title text-white" id="myModalLabel">
+                                Kayıt Durumu Değiştirilecek
+                                !
+                            </h5>
+
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="modal-body text-center ">
+                                <h3 class="modal-rptcause-name">UYARI</h3>
+                                <h4 class="grupTitle">Hasta Durumu Değiştirilecek</h4>
+                            </div>
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                                    Kapat
+                                </button>
+                                <input type="hidden" id="hiddenPersonelOdemeSilId"
+                                       name="hiddenPersonelOdemeSilId" />
+                                <input type="submit" id="btnPersonelSil" name="btnPersonelSil"
+                                       class="btn btn-success"
+                                       value="Durumu Değiştir">
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- /.modal-content -->
+            </div>
+        </div>
+        <!-- end main content-->
+    </div>
+    <!-- END layout-wrapper -->
+    <!-- Right bar overlay-->
+</body>
+</html>
