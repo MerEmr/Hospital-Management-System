@@ -4,6 +4,7 @@ namespace HospitalManagementSystem.UI.Controllers
 {
     public class DoctorController : Controller
     {
+
         public IActionResult DoctorList()
         {
             return View();
@@ -12,5 +13,11 @@ namespace HospitalManagementSystem.UI.Controllers
         {
             return View();
         }
+
+
+      
+
+
+
     }
 }
