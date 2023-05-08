@@ -20,7 +20,11 @@ namespace HospitalManagementSystem.DataAccess.Configurations
             builder.Property(x => x.BloodType).IsRequired().HasMaxLength(20);
             builder.Property(x => x.Allergy).IsRequired().HasMaxLength(100);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+             
+>>>>>>> bfe4dc2e8bc79b5b2b64fc7f8d9ed8518390f4ff
 =======
              
 >>>>>>> bfe4dc2e8bc79b5b2b64fc7f8d9ed8518390f4ff

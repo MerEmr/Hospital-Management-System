@@ -1,4 +1,6 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
+
+
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,9 +9,11 @@
   </PropertyGroup>
 
 
+
   <ItemGroup>
     <ProjectReference Include="..\HospitalManagementSystem.Core\HospitalManagementSystem.Core.csproj" />
   </ItemGroup>
+
 
 
 </Project>

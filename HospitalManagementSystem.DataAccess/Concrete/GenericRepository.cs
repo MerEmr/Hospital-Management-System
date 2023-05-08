@@ -18,7 +18,11 @@ namespace HospitalManagementSystem.DataAccess.Concrete
             _dbContext = dbContext;
             _dbSet = _dbContext.Set<T>();
         }
+<<<<<<< HEAD
 
+=======
+         
+>>>>>>> bfe4dc2e8bc79b5b2b64fc7f8d9ed8518390f4ff
         public void Add(T entity)
         {
             _dbSet.Add(entity);
