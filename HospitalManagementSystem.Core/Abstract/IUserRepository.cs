@@ -9,5 +9,6 @@ namespace HospitalManagementSystem.Core.Abstract
 {
     public interface IUserRepository : IGenericRepository<User>
     {
+
     }
 }

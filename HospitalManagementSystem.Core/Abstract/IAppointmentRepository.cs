@@ -9,5 +9,8 @@ namespace HospitalManagementSystem.Core.Abstract
 {
     public interface IAppointmentRepository:IGenericRepository<Appointment>
     {
+
     }
+
+    
 }

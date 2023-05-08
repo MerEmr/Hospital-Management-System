@@ -16,6 +16,7 @@ namespace HospitalManagementSystem.DataAccess.Concrete
 
         }
 
+
         public DbSet<Appointment>? Appointments { get; set; }
         public DbSet<Record>? Records { get; set; }
         public DbSet<Role>? Roles { get; set; }

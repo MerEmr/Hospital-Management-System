@@ -19,6 +19,10 @@ namespace HospitalManagementSystem.DataAccess.Configurations
             builder.Property(x => x.Password).IsRequired().HasMaxLength(50);
             builder.Property(x => x.Mail).IsRequired().HasMaxLength(50);
             builder.Property(x => x.TCIdNo).IsRequired();
+<<<<<<< HEAD
+=======
+            
+>>>>>>> bfe4dc2e8bc79b5b2b64fc7f8d9ed8518390f4ff
         }
     }
 }

@@ -19,7 +19,11 @@ namespace HospitalManagementSystem.DataAccess.Concrete
             Roles = new RoleRepository(_dbContext);
             Users = new UserRepository(_dbContext);
         }
+<<<<<<< HEAD
 
+=======
+         
+>>>>>>> bfe4dc2e8bc79b5b2b64fc7f8d9ed8518390f4ff
         public IAppointmentRepository Appointments { get; private set; }
 
         public IRecordRepository Records { get; private set; }
