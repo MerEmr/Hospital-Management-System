@@ -1,4 +1,6 @@
+using HospitalManagementSystem.Business.Concrete;
 using HospitalManagementSystem.Core.Abstract;
+using HospitalManagementSystem.Core.Abstract.Services;
 using HospitalManagementSystem.DataAccess.Concrete;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,7 +14,10 @@ builder.Services.AddDbContext<HospitalDbContext>(options =>
     options.UseSqlServer(connectionString);
 });
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-
+builder.Services.AddTransient<IAppointmentService, AppointmentService>();
+builder.Services.AddTransient<IRecordService,RecordService>();
+builder.Services.AddTransient<IRoleService, RoleService>();
+builder.Services.AddTransient<IUserService, UserService>();
 
 
 var app = builder.Build();

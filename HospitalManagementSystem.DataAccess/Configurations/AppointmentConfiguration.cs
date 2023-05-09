@@ -19,4 +19,4 @@ namespace HospitalManagementSystem.DataAccess.Configurations
         }
     }
 }
- 
+

@@ -14,7 +14,13 @@ namespace HospitalManagementSystem.DataAccess.Configurations
         public void Configure(EntityTypeBuilder<Role> builder)
         {
             builder.HasKey(x => x.Id);
+
+            builder.Property(x => x.Name).IsRequired().HasMaxLength(50);
+
             builder.Property(x => x.Name).IsRequired().HasMaxLength(50); 
+
+            builder.Property(x => x.Name).IsRequired().HasMaxLength(50); 
+
         }
     }
 }

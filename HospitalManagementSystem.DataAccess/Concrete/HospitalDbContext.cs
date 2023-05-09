@@ -14,7 +14,7 @@ namespace HospitalManagementSystem.DataAccess.Concrete
         public HospitalDbContext(DbContextOptions<HospitalDbContext> options) : base(options)
         {
 
-        } 
+        }
 
         public DbSet<Appointment>? Appointments { get; set; }
         public DbSet<Record>? Records { get; set; }

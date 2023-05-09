@@ -14,6 +14,7 @@ namespace HospitalManagementSystem.Entities.Concrete
         public string? Address { get; set; }
         public int? InsuranceNumber { get; set; }
         public string? BloodType { get; set; }
+
         public string? Allergy { get; set; }
 
 

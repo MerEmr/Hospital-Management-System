@@ -5,12 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HospitalManagementSystem.Core.Abstract
+namespace HospitalManagementSystem.Core.Abstract.Services
 {
-    public interface IRecordRepository: IGenericRepository<Record>
+    public interface IRecordService : IGenericService<Record>
     {
-
-
     }
-
 }
