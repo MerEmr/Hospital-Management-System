@@ -1,9 +1,8 @@
-﻿
+﻿@model IEnumerable<HospitalManagementSystem.Entities.Concrete.Appointment>
 @{
-    ViewData["Title"] = "DoctorList";
+    ViewData["Title"] = "GetAll";
     Layout = "~/Views/Shared/AdminPanelLayout.cshtml";
 }
-
 
 <div class="main-content">
     <div class="page-content">
@@ -11,7 +10,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0">Doctor Panel</h4>
+                            <h4 class="mb-sm-0">Randevu Paneli</h4>
                         </div>
                     </div>
                 </div>
@@ -21,7 +20,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Doctor List</h4>
+                                <h4 class="card-title">Randevu Listesi</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -29,13 +28,12 @@
                                            class="table table-striped">
                                         <thead>
                                         <tr>
-                                            <th>Edit&nbsp;&&nbsp;Delete</th>
-                                            <th>FirstName</th>
-                                            <th>LastName</th>
-                                            <th>Username</th>
-                                            <th>Mail</th>
-                                            <th>Tc Id No</th>
-                                            <th>Status</th>
+                                            <th>Gümncelle&nbsp;&&nbsp;Sil</th>
+                                            <th>Randevu Sahibi</th>
+                                            <th>Randevu Adı</th>
+                                            <th>Randevu Tarihi</th>
+                                            <th>Açıklama</th>
+                                            <th>Doktor Adı ve Soyadı</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -54,12 +52,11 @@
                                                     <i class="fas fa-power-off"></i>
                                                 </a>
                                             </td>
-                                            <td data-field="dataDoctorName">Mert Umut</td>
-                                            <td data-field="dataDoctorSurname">Yalpı</td>
-                                            <td data-field="dataDoctorUsername">Username</td>
-                                            <td data-field="dataDoctorUsername">mert@gmail.com</td>
-                                            <td data-field="dataDoctorUsername">12011201202</td>
-                                            <td data-field="dataDoctorUsername">Active</td>
+                                            <td data-field="dataAppointmentUsesr">Oğuzhan Ağır</td>
+                                            <td data-field="dataAppointmenName">Randevu Göz Hastalıkları</td>
+                                            <td data-field="dataAppointmenDate">09.05.2023</td>
+                                            <td data-field="dataDescription">Randevu açıklamasıdır</td>
+                                            <td data-field="dataDoctorName">Doktor Ad ve Soyad</td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -78,7 +75,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="myExtraLargeModalLabel">
-                            Edit Panel </h5>
+                            Güncelleme Paneli </h5>
                         <button type="button" class="btn-close"
                                 data-bs-dismiss="modal"
                                 aria-label="Close"></button>
@@ -88,53 +85,48 @@
                             <div class="col-md-12">
                                 <div class="card">
                                     <div class="card-header">
-                                        <h4 class="card-title">Update Doctor</h4>
+                                        <h4 class="card-title">Randevu Güncelle</h4>
                                     </div>
 
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="mt-1">
-                                                    <label class=" col-form-label">FirstName</label>
-                                                    <input type="text" class="form-control" id="txtDoctorNameModal">
+                                                    <label class=" col-form-label">Randevu Sahibi</label>
+                                                    <input type="text" name="UserId" class="form-control" id="txtDoctorNameModal">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="mt-1">
-                                                    <label  class=" col-form-label">LastName</label>
+                                                    <label  class=" col-form-label">Randevu Adı</label>
                                                     <input type="text" class="form-control" id="txtDoctorLastnameModal"
-                                                           name="txtDoctorLastname">
+                                                           name="Name">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="mt-1">
-                                                    <label class=" col-form-label">UserName</label>
+                                                    <label class=" col-form-label">Randevu Tarihi</label>
                                                     <input type="text" class="form-control" id="txtDoctorUsernameModal"
-                                                           name="txtDoctorUsername">
+                                                           name="DateOfAppointment">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="mt-1">
-                                                    <label class=" col-form-label">Mail</label>
+                                                    <label class=" col-form-label">Açıklama</label>
                                                     <input type="text" class="form-control" id="txtDoctorMailModal"
-                                                           name="txtDoctorMail">
+                                                           name="Description">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="mt-1">
-                                                    <label class=" col-form-label">TC Id No</label>
+                                                    <label class=" col-form-label">Doktor Adı ve Soyadı</label>
                                                     <input type="text" class="form-control" id="txtTcIdNoModal"
-                                                           name="txtTcIdNo">
+                                                           name="DoctorId">
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="mt-1">
-                                                    <label class=" col-form-label">Password</label>
-                                                    <input class="form-control" type="password" id="txtPasswordModal" name="txtPassword">
-                                                </div>
-                                            </div>
+                                          
                                         </div>
                                     </div>
                                 </div><!-- end card -->
@@ -144,7 +136,7 @@
                     <div class="card-footer d-grid">
                         <button type="submit"
                                 class="btn btn-success btn-block waves-effect waves-light">
-                            <i class="ri-check-line align-middle me-2"></i> Update
+                            <i class="ri-check-line align-middle me-2"></i> Güncelle
                         </button>
                     </div>
                 </div><!-- /.modal-dialog -->
@@ -164,13 +156,13 @@
                     </div>
                     <div class="col-md-12">
                         <div class="modal-body text-center ">
-                            <h3 class="modal-rptcause-name">ALERT!</h3>
-                            <h4 class="grupTitle">Doctor activity status will be changed</h4>
+                            <h3 class="modal-rptcause-name">Uyarı!</h3>
+                            <h4 class="grupTitle">Appointment activity status will be changed</h4>
                         </div>
                         <div class="modal-footer">
 
                             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-                                Close
+                                Kapat
                             </button>
                             <input type="submit" id="btnPersonelSilModal" name="btnPersonelSilModal"
                                    class="btn btn-success"
@@ -181,6 +173,8 @@
             </div><!-- /.modal-content -->
         </div>
     </div>
+
+
 
 
 
