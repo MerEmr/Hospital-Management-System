@@ -28,7 +28,7 @@
                                            class="table table-striped">
                                         <thead>
                                         <tr>
-                                            <th>Gümncelle&nbsp;&&nbsp;Sil</th>
+                                            <th>Güncelle&nbsp;&&nbsp;Sil</th>
                                             <th>Randevu Sahibi</th>
                                             <th>Randevu Adı</th>
                                             <th>Randevu Tarihi</th>
@@ -37,7 +37,9 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr data-id="1">
+                                  @foreach (var item in Model)
+                                    {
+                                              <tr data-id="@item.Id">
                                             <td style="width: 100px">
                                                 <a class="btn btn-outline-success btn-sm edit"
                                                    title="Edit"
@@ -52,12 +54,13 @@
                                                     <i class="fas fa-power-off"></i>
                                                 </a>
                                             </td>
-                                            <td data-field="dataAppointmentUsesr">Oğuzhan Ağır</td>
-                                            <td data-field="dataAppointmenName">Randevu Göz Hastalıkları</td>
-                                            <td data-field="dataAppointmenDate">09.05.2023</td>
-                                            <td data-field="dataDescription">Randevu açıklamasıdır</td>
-                                            <td data-field="dataDoctorName">Doktor Ad ve Soyad</td>
+                                            <td data-field="dataAppointmentUsers">@item.UserId</td>
+                                            <td data-field="dataAppointmenName">@item.Name</td>
+                                            <td data-field="dataAppointmenDate">@item.DateOfAppointment</td>
+                                            <td data-field="dataDescription">@item.Description</td>
+                                            <td data-field="dataDoctorName">@item.DoctorId</td>
                                         </tr>
+                                    }
                                         </tbody>
                                     </table>
                                 </div>
