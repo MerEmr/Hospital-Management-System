@@ -1,4 +1,4 @@
-﻿
+﻿@model List<HospitalManagementSystem.Entities.Concrete.User>
 @{
     ViewData["Title"] = "PatientList";
     Layout = "~/Views/Shared/AdminPanelLayout.cshtml";
@@ -53,14 +53,14 @@
                                                     <th>FirstName</th>
                                                     <th>LastName</th>
                                                     <th>Tc Id Number</th>
-                                                    <th>Tel</th>
                                                     <th>Email</th>
-                                                    <th>Role</th>
 
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr data-id="1">
+                                            @foreach (var patient in Model)
+                                            {
+                                                <tr data-id="@patient.Id">
                                                     <td style="width: 100px">
                                                         <a class="btn btn-outline-success btn-sm edit"
                                                            title="Düzenle"
@@ -68,20 +68,18 @@
                                                            data-bs-target=".bs-example-modal-lg">
                                                             <i class="fas fa-pencil-alt"></i>
                                                         </a>
-
                                                         <a class="btn btn-outline-danger btn-sm edit"
                                                            data-bs-toggle="modal"
                                                            data-bs-target="#deletemodal">
                                                             <i class="fas fa-power-off"></i>
                                                         </a>
                                                     </td>
-                                                    <td data-field="dataFirstName">Mert Umut</td>
-                                                    <td data-field="dataLastName">Yalpı</td>
-                                                    <td data-field="dataTcIdNumber">32345678964</td>
-                                                    <td data-field="dataTel">05319289752</td>
-                                                    <td data-field="dataEmail">mertumut01@hotmail.com</td>
-                                                    <td data-field="dataEmail">Patient</td>
+                                                    <td>@(patient.FirstName ?? "N/A")</td>
+                                                    <td>@(patient.LastName ?? "N/A")</td>
+                                                    <td>@patient.TCIdNo</td>
+                                                    <td>@(patient.Mail ?? "N/A")</td>
                                                 </tr>
+                                            }
                                             </tbody>
                                         </table>
                                     </div>
@@ -111,7 +109,7 @@
                                 <div class="col-md-12">
                                     <div class="card">
                                         <div class="card-header">
-                                            <h4 class="card-title">Update Doctor</h4>
+                                            <h4 class="card-title">Update Patient</h4>
                                         </div>
 
                                         <div class="card-body">
@@ -119,13 +117,13 @@
                                                 <div class="col-md-6">
                                                     <div class="mt-1">
                                                         <label class=" col-form-label">FirstName</label>
-                                                        <input type="text" class="form-control" id="txtDoctorNameModal">
+                                                        <input type="text" class="form-control" id="txtpatientNameModal">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="mt-1">
                                                         <label class=" col-form-label">LastName</label>
-                                                        <input type="text" class="form-control" id="txtDoctorLastnameModal"
+                                                        <input type="text" class="form-control" id="txtpatientLastnameModal"
                                                                name="txtDoctorLastname">
                                                     </div>
                                                 </div>

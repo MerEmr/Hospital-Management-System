@@ -169,7 +169,7 @@
                                 <span>Personal Menu</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="/Personal/PersonalOperaitons">Create-Delete-Update</a></li>
+                                <li><a href="/Personal/PersonalOperations">Create-Delete-Update</a></li>
                                 <li><a href="/Personal/PersonalList">Personal List</a></li>
                             </ul>
                         </li>
@@ -180,10 +180,8 @@
         </div>
 
     <div>
-        <div class="main-content">
-            <div class="page-content">
-
-                <!-- start page title -->
+        <div>
+            <!-- start page title -->
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
@@ -194,58 +192,7 @@
 
                 <!-- end page title -->
                 @RenderBody()
-                <div class="row">
-                  
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Doctor List</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table id="datatable-button" name="datatable-button"
-                                           class="table table-striped">
-                                        <thead>
-                                        <tr>
-                                            <th>Edit&nbsp;&&nbsp;Delete</th>
-                                            <th>FirstName</th>
-                                            <th>LastName</th>
-                                            <th>Username</th>
-                                            <th>Mail</th>
-                                            <th>Tc Id No</th>
-                                            <th>Status</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr data-id="1">
-                                            <td style="width: 100px">
-                                                <a class="btn btn-outline-success btn-sm edit"
-                                                   title="Edit"
-                                                   data-bs-toggle="modal"
-                                                   data-bs-target=".bs-example-modal-lg">
-                                                    <i class="fas fa-pencil-alt"></i>
-                                                </a>
-
-                                                <a class="btn btn-outline-danger btn-sm edit"
-                                                   data-bs-toggle="modal"
-                                                   data-bs-target="#deletemodal">
-                                                    <i class="fas fa-power-off"></i>
-                                                </a>
-                                            </td>
-                                            <td data-field="dataDoctorName">Mert Umut</td>
-                                            <td data-field="dataDoctorSurname">Yalpı</td>
-                                            <td data-field="dataDoctorUsername">Username</td>
-                                            <td data-field="dataDoctorUsername">mert@gmail.com</td>
-                                            <td data-field="dataDoctorUsername">12011201202</td>
-                                            <td data-field="dataDoctorUsername">Active</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- end col -->
-                </div>
+               
                 <!-- container-fluid -->
             </div>
             <!-- End Page-content -->
@@ -362,7 +309,7 @@
                 </div><!-- /.modal-content -->
             </div>
         </div>
-    </div>
+   
 
                
            
@@ -377,7 +324,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="text-sm-end d-none d-sm-block">
-                                Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign
+                                Crafted with <i class="mdi mdi-heart text-danger"></i> by Ogmerem
                             </div>
                         </div>
                     </div>

@@ -36,7 +36,6 @@
                     </div>
                     <!-- end page title -->
                     <div class="row">
-
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
@@ -53,14 +52,13 @@
                                                     <th>FirstName</th>
                                                     <th>LastName</th>
                                                     <th>Tc Id Number</th>
-                                                    <th>Tel</th>
                                                     <th>Email</th>
-                                                    <th>Role</th>
-
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr data-id="1">
+                                            @foreach (var doctor in Model)
+                                            {
+                                                <tr data-id="@doctor.Id">
                                                     <td style="width: 100px">
                                                         <a class="btn btn-outline-success btn-sm edit"
                                                            title="Düzenle"
@@ -68,20 +66,20 @@
                                                            data-bs-target=".bs-example-modal-lg">
                                                             <i class="fas fa-pencil-alt"></i>
                                                         </a>
-                                                        
+
                                                         <a class="btn btn-outline-danger btn-sm edit"
                                                            data-bs-toggle="modal"
                                                            data-bs-target="#deletemodal">
                                                             <i class="fas fa-power-off"></i>
                                                         </a>
                                                     </td>
-                                                    <td data-field="dataFirstName">Mert Umut</td>
-                                                    <td data-field="dataLastName">Yalpı</td>
-                                                    <td data-field="dataTcIdNumber">32345678964</td>
-                                                    <td data-field="dataTel">05319289752</td>
-                                                    <td data-field="dataEmail">mertumut01@hotmail.com</td>
-                                                    <td data-field="dataEmail">Personal</td>
+
+                                                    <td>@(doctor.FirstName ?? "N/A")</td>
+                                                    <td>@(doctor.LastName ?? "N/A")</td>
+                                                    <td>@doctor.TCIdNo</td>
+                                                    <td>@(doctor.Mail ?? "N/A")</td>
                                                 </tr>
+                                            }
                                             </tbody>
                                         </table>
                                     </div>
