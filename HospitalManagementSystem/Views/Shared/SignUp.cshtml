@@ -1,0 +1,34 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+	ViewData["Title"] = "Sign Up";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="~/assets/images/favicon.ico" />
+	<title>Kayıt Ol | Örnek Sağlık</title>
+	<link href="@Url.Content("~/css/SignStyle.css")" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div class="modal fade" id="login-modal" role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog">
+			<br /> <br /> <br /> <br />
+			<div class="loginmodal-container">
+				<h1>Kayıt Olun</h1><br>
+				<form>
+					<input type="text" name="name" placeholder="Adınızı Giriniz">
+					<input type="text" name="surname" placeholder="Soyadınızı Giriniz">
+					<input type="text" name="phone_number" placeholder="Telefon Numaranızı Giriniz">
+					<input type="text" name="mail" placeholder="E-postanızı Giriniz">
+					<input type="text" name="goverment_id" placeholder="Kimlik Numaranızı Giriniz">
+					<input type="password" name="password" placeholder="Şifrenizi Giriniz">
+					<input type="text" name="city" placeholder="Şehrinizi Giriniz">
+					<input type="text" name="adress" placeholder="Adresinizi Giriniz">
+					<input type="submit" name="login" class="login loginmodal-submit" value="Hesap Oluştur">
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
