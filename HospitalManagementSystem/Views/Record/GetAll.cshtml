@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "GetAll";
+    Layout = "~/Views/Shared/_DoctorPanelLayout.cshtml";
+}
+
+<h1>Record List</h1>
+
+
+<div class="container">
+    <div class="row" >
+        
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Doctor List</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="datatable-button" name="datatable-button"
+                               class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Edit&nbsp;&&nbsp;Delete</th>
+                                    <th>FirstName</th>
+                                    <th>LastName</th>
+                                    <th>Username</th>
+                                    <th>Mail</th>
+                                    <th>Tc Id No</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr data-id="1">
+                                    <td style="width: 100px">
+                                        <a class="btn btn-outline-success btn-sm edit"
+                                           title="Edit"
+                                           data-bs-toggle="modal"
+                                           data-bs-target=".bs-example-modal-lg">
+                                            <i class="fas fa-pencil-alt"></i>
+                                        </a>
+                                        <a class="btn btn-outline-danger btn-sm edit"
+                                           data-bs-toggle="modal"
+                                           data-bs-target="#deletemodal">
+                                            <i class="fas fa-power-off"></i>
+                                        </a>
+                                    </td>
+                                    <td data-field="dataDoctorName">Mert Umut</td>
+                                    <td data-field="dataDoctorSurname">Yalpı</td>
+                                    <td data-field="dataDoctorUsername">Username</td>
+                                    <td data-field="dataDoctorUsername">mert@gmail.com</td>
+                                    <td data-field="dataDoctorUsername">12011201202</td>
+                                    <td data-field="dataDoctorUsername">Active</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end col -->
+    </div>
+</div>
+

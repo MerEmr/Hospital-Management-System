@@ -18,6 +18,12 @@ namespace HospitalManagementSystem.UI.Controllers
             return View();
         }
 
+        public IActionResult GetAll()
+        {
+            var recordList = _recordService.GetAll();
+            return View(recordList);
+        }
+
         [HttpGet]
         public IActionResult AddRecord()
         {
