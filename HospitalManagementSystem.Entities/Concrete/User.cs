@@ -22,4 +22,5 @@ namespace HospitalManagementSystem.Entities.Concrete
 
 
     }
+
 }
