@@ -23,4 +23,5 @@ namespace HospitalManagementSystem.Entities.Concrete
         public Medical? Medical { get; set; }
 
     }
+
 }

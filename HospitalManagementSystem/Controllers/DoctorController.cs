@@ -3,6 +3,7 @@ using HospitalManagementSystem.Entities.Concrete;
 using HospitalManagementSystem.UI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace HospitalManagementSystem.UI.Controllers
 {
@@ -31,6 +32,7 @@ namespace HospitalManagementSystem.UI.Controllers
         {
             return View();
         }
+        
 
         [HttpPost]
         public async Task<IActionResult> Add(User addDoctorRequest)
@@ -64,5 +66,58 @@ namespace HospitalManagementSystem.UI.Controllers
         }
 
 
+        [HttpGet]
+        public async Task<IActionResult> View(int id)
+        {
+            var doctor =await hospitalDbContext.Users.FirstOrDefaultAsync(x => x.Id == id);
+            if (doctor != null)
+            {
+                var viewModel = new UpdateModel()
+                {
+                    Id = doctor.Id,
+                    Firstname = doctor.FirstName,
+                    Lastname = doctor.LastName,
+                    Mail = doctor.Mail,
+                    TcIdNo = (int)doctor.TCIdNo,
+                    RoleId = 1,
+                };
+                return await Task.Run(() => View("View",(viewModel)));
+            }
+         
+            return RedirectToAction("DoctorList");
+        }
+        [HttpPost]
+        public async Task<IActionResult>View(UpdateModel model)
+        {
+
+            var doctor = await hospitalDbContext.Users.FindAsync(model.Id);
+            if (doctor != null)
+            {
+                doctor.FirstName = model.Firstname;
+                doctor.LastName = model.Lastname;
+                doctor.Mail = model.Mail;
+                doctor.TCIdNo = model.TcIdNo;
+                await hospitalDbContext.SaveChangesAsync();
+                return RedirectToAction("View");
+            }
+
+            HttpContext.Session.SetString("SuccessMessage", "Güncelleme başarıyla tamamlandı!");
+            return RedirectToAction("View", new { id = doctor.Id });
+
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(UpdateModel model)
+        {
+            var doctor = hospitalDbContext.Users.Find(model.Id);
+            if (doctor != null)
+            {
+                hospitalDbContext.Users.Remove(doctor);
+                await hospitalDbContext.SaveChangesAsync();
+                return RedirectToAction("DoctorList");
+            }
+            return RedirectToAction("DoctorList");
+
+        }
     }
 }

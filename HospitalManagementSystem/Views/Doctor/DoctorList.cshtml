@@ -2,6 +2,8 @@
 @{
     ViewData["Title"] = "DoctorList";
     Layout = "~/Views/Shared/AdminPanelLayout.cshtml";
+  
+    
 }
 
 <!doctype html>
@@ -15,6 +17,9 @@
         <div class="main-content">
             <div class="page-content">
                 <div class="container-fluid">
+
+                    <!-- Diğer sayfa içeriği -->
+
                     <!-- start page title -->
                     <div class="row">
                         <div class="col-12">
@@ -42,42 +47,45 @@
                                         <table id="datatable-button" name="datatable-button"
                                                class="table table-striped">
                                             <thead>
-                                                <tr>
-                                                    <th>Edit&nbsp;& Active/Passive</th>
-                                                    <th>FirstName</th>
-                                                    <th>LastName</th>
-                                                    <th>Tc Id Number</th>
-                                                    <th>Tel</th>
-                                                    <th>Email</th>
-                                                </tr>
+                                            <tr>
+                                                <th>Edit&nbsp;& </th>
+                                                <th>Active/Passive</th>
+                                                <th>Id</th>
+                                                <th>FirstName</th>
+                                                <th>LastName</th>
+                                                <th>Tc</th>
+                                                <th>Email</th>
+                                            </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach (var doctor in Model)
-                                                {
-                                                    <tr data-id="@doctor.Id">
-                                                        <td style="width: 100px">
-                                                            <a class="btn btn-outline-success btn-sm edit"
+                                            @foreach (var doctor in Model)
+                                            {
+                                                <tr>
+                                                    <td style="width: 100px">
+
+                                                        <a href="/Doctor/View/@doctor.Id" class="btn btn-outline-success btn-sm edit"
                                                            title="Düzenle"
-                                                           data-bs-toggle="modal"
-                                                           data-bs-target=".bs-example-modal-lg">
-                                                                <i class="fas fa-pencil-alt"></i>
-                                                            </a>
+                                                           data-id="@doctor.Id">
+                                                            <i class="fas fa-pencil-alt"></i>
+                                                        </a>
 
-                                                            <a class="btn btn-outline-danger btn-sm edit"
-                                                           data-bs-toggle="modal"
-                                                           data-bs-target="#deletemodal">
-                                                                <i class="fas fa-power-off"></i>
-                                                            </a>
-                                                        </td>
+                                                    </td>
+                                                    <td>
+                                                        <a class="btn btn-outline-danger btn-sm edit" asp-controller="Doctor" asp-action="Delete"
+                                                           data-id="@doctor.Id">
 
-                                                        <td>@(doctor.FirstName ?? "N/A")</td>
-                                                        <td>@(doctor.LastName ?? "N/A")</td>
-                                                        <td>@doctor.TCIdNo</td>
-                                                        <td>00000</td>
-                                                        <td>@(doctor.Mail ?? "N/A")</td>
+                                                            <i class="fas fa-trash"></i>
+                                                        </a>
+                                                    </td>
 
-                                                    </tr>
-                                                }
+                                                    <td>@(doctor.Id ?? "N/A")</td>
+                                                    <td>@(doctor.FirstName ?? "N/A")</td>
+                                                    <td>@(doctor.LastName ?? "N/A")</td>
+                                                    <td>@doctor.TCIdNo</td>
+                                                    <td>@(doctor.Mail ?? "N/A")</td>
+
+                                                </tr>
+                                            }
                                             </tbody>
                                         </table>
                                     </div>
@@ -115,14 +123,14 @@
                                                 <div class="col-md-6">
                                                     <div class="mt-1">
                                                         <label class=" col-form-label">FirstName</label>
-                                                        <input type="text" class="form-control" id="txtDoctorNameModal">
+                                                        <input type="text" class="form-control" id="txtDoctorNameModal" name="txtDoctorNameModal">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="mt-1">
                                                         <label class=" col-form-label">LastName</label>
                                                         <input type="text" class="form-control" id="txtDoctorLastnameModal"
-                                                               name="txtDoctorLastname">
+                                                               name="txtDoctorLastnameModal">
                                                     </div>
                                                 </div>
                                             </div>
@@ -130,22 +138,20 @@
                                                 <div class="col-md-6">
                                                     <div class="mt-1">
                                                         <label class=" col-form-label">UserName</label>
-                                                        <input type="text" class="form-control" id="txtDoctorUsernameModal"
-                                                               name="txtDoctorUsername">
+                                                        <input type="text" class="form-control" id="txtDoctorUsernameModal" name="txtDoctorUsernameModal">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="mt-1">
                                                         <label class=" col-form-label">Mail</label>
-                                                        <input type="text" class="form-control" id="txtDoctorMailModal"
-                                                               name="txtDoctorMail">
+                                                        <input type="text" class="form-control" id="txtDoctorMailModal" name="txtDoctorMailModal" />
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="mt-1">
                                                         <label class=" col-form-label">TC Id No</label>
                                                         <input type="text" class="form-control" id="txtTcIdNoModal"
-                                                               name="txtTcIdNo">
+                                                               name="txtTcIdNoModal">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -170,37 +176,7 @@
                 </div><!-- /.modal -->
             </div><!-- /.modal -->
             <!-- End Page-content -->
-            <div id="deletemodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                 aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header bg-info ">
-                            <h5 class="modal-title text-white" id="myModalLabel">
-                                Registration Status will be changed
-                                !
-                            </h5>
-
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="modal-body text-center ">
-                                <h3 class="modal-rptcause-name">ALERT!</h3>
-                                <h4 class="grupTitle">Doctor activity status will be changed</h4>
-                            </div>
-                            <div class="modal-footer">
-
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-                                    Close
-                                </button>
-                                <input type="submit" id="btnDoctorSilModal'" name="btnDoctorSilModal"
-                                       class="btn btn-success"
-                                       value="Change">
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div>
+     
         </div>
         <!-- end main content-->
     </div>

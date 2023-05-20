@@ -1,0 +1,115 @@
+﻿@model HospitalManagementSystem.UI.Models.UpdateModel
+@using HospitalManagementSystem.Entities.Concrete
+
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/AdminPanelLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body data-sidebar="dark">
+
+    <div id="layout-wrapper">
+
+        <div class="main-content">
+
+            <div class="page-content">
+                <form method="post" action="View">
+                    <div class="col-md-12">  </div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                    <h2 class="mb-sm-0">Doctor Panel</h2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8 offset-2 ">
+                          
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Update Doctor</h4>
+                                </div>
+
+                                <div class="card-body">
+
+                                    <div class="row">
+                                        <div class="col-md-6" readonly hidden>
+                                            <div class="mt-2">
+                                                <label class="col-form-label">Doctor Id No</label>
+                                                <input type="text" class="form-control" id="Id" asp-for="Id">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="mt-2">
+                                                <label class="col-form-label">First Name</label>
+                                                <input type="text" class="form-control" id="txtDoctorFirstname" asp-for="Firstname">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mt-2">
+                                                <label class="col-form-label">Last Name</label>
+                                                <input type="text" class="form-control" id="txtDoctorLasrname" asp-for="Lastname">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="mt-2">
+                                                <label class="col-form-label">TC Id No</label>
+                                                <input type="number" class="form-control" id="txtTcIdNo" asp-for="TcIdNo">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="mt-2">
+                                                <label class="col-form-label">Mail</label>
+                                                <input type="text" class="form-control" id="txtDoctorMail" placeholder="Ogmerem@gmail.com" asp-for="Mail">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary mt-4 off" type="submit" style="width: 100%;">SAVE</button>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+                @if (ViewBag.ErrorMessage != null)
+                {
+                    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+                }
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+                }
+                @if(ViewBag.ErrorMessage != null)
+                {
+                    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+                }
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+                }
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Add your JavaScript code here
+        // ...
+    </script>
+
+</body>
+
+</html>
+
+
