@@ -35,7 +35,7 @@ namespace HospitalManagementSystem.Business.Concrete
         {
             try
             {
-                var userList = _unitOfWork.Users.GetAll();
+                var userList = _unitOfWork.Users.GetAll(x=>x.Role!);
                 return userList;
             }
             catch (Exception excep)
