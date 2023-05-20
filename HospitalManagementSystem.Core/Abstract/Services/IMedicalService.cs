@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace HospitalManagementSystem.Core.Abstract.Services
 {
-    public interface IAppointmentService : IGenericService<Appointment>
+    public interface IMedicalService : IGenericService<Medical>
     {
-        IEnumerable<Appointment> GetByUserId(int id);
+        Medical GetByUserId(int id);
     }
 }

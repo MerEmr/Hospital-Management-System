@@ -14,6 +14,7 @@ namespace HospitalManagementSystem.Core.Abstract
         IRecordRepository Records { get; }
         IRoleRepository Roles { get; }
         IUserRepository Users { get; }
+        IMedicalRepository Medicals { get; }
 
         void Save();
     }
