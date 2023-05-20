@@ -1,8 +1,9 @@
 ﻿@model IEnumerable<HospitalManagementSystem.Entities.Concrete.Appointment>
 @{
-    ViewData["Title"] = "GetAll";
+    ViewData["Title"] = "ConsultingList";
     Layout = "~/Views/Shared/_DoctorPanelLayout.cshtml";
 }
+
 
 <div class="main-content">
     <div class="page-content">
@@ -10,7 +11,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0">Randevu Paneli</h4>
+                            <h4 class="mb-sm-0">Doktor Paneli</h4>
                         </div>
                     </div>
                 </div>
@@ -20,7 +21,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Randevu Listesi</h4>
+                                <h4 class="card-title">Admin Tarafından Atanan Randevu Listesi</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -176,9 +177,6 @@
             </div><!-- /.modal-content -->
         </div>
     </div>
-
-
-
 
 
 

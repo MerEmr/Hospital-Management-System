@@ -38,7 +38,7 @@ namespace HospitalManagementSystem.UI.Controllers
         {
             try
             {
-                var consulting = _appointmentService.GetById(id);
+                var consulting = _appointmentService.GetByUserId(id);
                 return View(consulting);
             }
             catch (Exception)

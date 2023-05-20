@@ -9,20 +9,20 @@ using System.Threading.Tasks;
 
 namespace HospitalManagementSystem.Business.Concrete
 {
-    public class AppointmentService : IAppointmentService
+    public class MedicalService : IMedicalService
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public AppointmentService(IUnitOfWork unitOfWork)
+        public MedicalService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
 
-        public void Add(Appointment entity)
+        public void Add(Medical entity)
         {
             try
             {
-                _unitOfWork.Appointments.Add(entity);
+                _unitOfWork.Medicals.Add(entity);
                 _unitOfWork.Save();
             }
             catch (Exception excep)
@@ -31,12 +31,12 @@ namespace HospitalManagementSystem.Business.Concrete
             }
         }
 
-        public IEnumerable<Appointment> GetAll()
+        public IEnumerable<Medical> GetAll()
         {
             try
             {
-                var appointmentList = _unitOfWork.Appointments.GetAll();
-                return appointmentList;
+                var medicalList = _unitOfWork.Medicals.GetAll();
+                return medicalList;
             }
             catch (Exception excep)
             {
@@ -44,12 +44,12 @@ namespace HospitalManagementSystem.Business.Concrete
             }
         }
 
-        public Appointment GetById(int id)
+        public Medical GetById(int id)
         {
             try
             {
-                var appointment = _unitOfWork.Appointments.GetById(id);
-                return appointment;
+                var medical = _unitOfWork.Medicals.GetById(id);
+                return medical;
             }
             catch (Exception excep)
             {
@@ -57,12 +57,12 @@ namespace HospitalManagementSystem.Business.Concrete
             }
         }
 
-        public IEnumerable<Appointment> GetByUserId(int id)
+        public Medical GetByUserId(int id)
         {
             try
             {
-                var appointment = _unitOfWork.Appointments.GetAll().Where(x=>x.DoctorId == id);
-                return appointment;
+                var medical = _unitOfWork.Medicals.GetAll().Where(x=>x.UserId == id).FirstOrDefault();
+                return medical!;
             }
             catch (Exception excep)
             {
@@ -75,10 +75,10 @@ namespace HospitalManagementSystem.Business.Concrete
         {
             try
             {
-                var appointment = _unitOfWork.Appointments.Find(x => x.Id == id);
-                if (appointment != null)
+                var medical = _unitOfWork.Medicals.Find(x => x.Id == id);
+                if (medical != null)
                 {
-                    _unitOfWork.Appointments.Remove(appointment);
+                    _unitOfWork.Medicals.Remove(medical);
                     _unitOfWork.Save();
                 }
             }
@@ -88,22 +88,21 @@ namespace HospitalManagementSystem.Business.Concrete
             }
         }
 
-        public void Update(Appointment entity)
+        public void Update(Medical entity)
         {
             try
             {
-                var appointment = _unitOfWork.Appointments.Find(x => x.Id == entity.Id);
-                if (appointment != null)
+                var medical = _unitOfWork.Medicals.Find(x => x.Id == entity.Id);
+                if (medical != null)
                 {
-                    entity.Id = appointment.Id;
-                    entity.Name = appointment.Name;
-                    entity.UserId = appointment.UserId;
-                    entity.DateOfAppointment = appointment.DateOfAppointment;
-                    entity.Description = appointment.Description;
-                    entity.DoctorId = appointment.DoctorId;
-                   
+                    medical.Id = entity.Id;
+                    medical.Medication = entity.Medication;
+                    medical.Diagnosis = entity.Diagnosis;
+                    medical.Description = entity.Description;
+
+
                 }
-                _unitOfWork.Appointments.Update(entity);
+                _unitOfWork.Medicals.Update(medical);
                 _unitOfWork.Save();
             }
             catch (Exception excep)

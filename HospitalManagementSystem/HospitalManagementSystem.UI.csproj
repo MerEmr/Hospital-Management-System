@@ -95,6 +95,17 @@
     <None Include="Views\assets\libs\gulp-rtlcss\node_modules\rtlcss\lib\util.js" />
     <None Include="Views\assets\libs\gulp-rtlcss\node_modules\strip-json-comments\index.js" />
     <None Include="Views\assets\libs\gulp-rtlcss\node_modules\strip-json-comments\license" />
+    <None Include="wwwroot\css\bootstrap\bootstrap.min.js" />
+    <None Include="wwwroot\css\icofont\fonts\icofont.woff2" />
+    <None Include="wwwroot\css\main-page-css\style.css.map" />
+    <None Include="wwwroot\css\slick-carousel\slick\config.rb" />
+    <None Include="wwwroot\css\slick-carousel\slick\fonts\slick.svg" />
+    <None Include="wwwroot\css\slick-carousel\slick\slick-theme.less" />
+    <None Include="wwwroot\css\slick-carousel\slick\slick-theme.scss" />
+    <None Include="wwwroot\css\slick-carousel\slick\slick.js" />
+    <None Include="wwwroot\css\slick-carousel\slick\slick.less" />
+    <None Include="wwwroot\css\slick-carousel\slick\slick.min.js" />
+    <None Include="wwwroot\css\slick-carousel\slick\slick.scss" />
   </ItemGroup>
 
   <ItemGroup>

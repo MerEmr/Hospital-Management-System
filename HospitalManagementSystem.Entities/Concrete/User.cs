@@ -20,6 +20,7 @@ namespace HospitalManagementSystem.Entities.Concrete
 
         public Record? Record { get; set; }
 
+        public Medical? Medical { get; set; }
 
     }
 

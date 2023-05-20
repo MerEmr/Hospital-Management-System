@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HospitalManagementSystem.Core.Abstract.Services
+namespace HospitalManagementSystem.Core.Abstract
 {
-    public interface IAppointmentService : IGenericService<Appointment>
+    public interface IMedicalRepository : IGenericRepository<Medical>
     {
-        IEnumerable<Appointment> GetByUserId(int id);
+
     }
 }
