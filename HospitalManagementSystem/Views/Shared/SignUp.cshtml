@@ -17,17 +17,18 @@
 			<br /> <br /> <br /> <br />
 			<div class="loginmodal-container">
 				<h1>Kayıt Olun</h1><br>
-				<form>
-					<input type="text" name="name" placeholder="Adınızı Giriniz">
-					<input type="text" name="surname" placeholder="Soyadınızı Giriniz">
+				   @using (Html.BeginForm("Register", "Auth", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+					<input type="text" name="FirstName" placeholder="Adınızı Giriniz">
+					<input type="text" name="LastName" placeholder="Soyadınızı Giriniz">
 					<input type="text" name="phone_number" placeholder="Telefon Numaranızı Giriniz">
-					<input type="text" name="mail" placeholder="E-postanızı Giriniz">
+					<input type="text" name="Mail" placeholder="E-postanızı Giriniz">
 					<input type="text" name="goverment_id" placeholder="Kimlik Numaranızı Giriniz">
-					<input type="password" name="password" placeholder="Şifrenizi Giriniz">
+					<input type="password" name="Password" placeholder="Şifrenizi Giriniz">
 					<input type="text" name="city" placeholder="Şehrinizi Giriniz">
 					<input type="text" name="adress" placeholder="Adresinizi Giriniz">
-					<input type="submit" name="login" class="login loginmodal-submit" value="Hesap Oluştur">
-				</form>
+					<button type="submit" name="login" class="login loginmodal-submit" value="Hesap Oluştur">Hesap Oluştur</button>
+				}
 			</div>
 		</div>
 	</div>

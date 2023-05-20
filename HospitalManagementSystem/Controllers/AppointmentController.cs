@@ -1,4 +1,5 @@
 ﻿using HospitalManagementSystem.Core.Abstract.Services;
+using HospitalManagementSystem.Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HospitalManagementSystem.UI.Controllers
@@ -15,6 +16,25 @@ namespace HospitalManagementSystem.UI.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public IActionResult AddAppointment()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddAppointment(Appointment appointment)
+        {
+            if (appointment != null)
+            {
+                _appointmentService.Add(appointment);
+            }
+            return RedirectToAction("Index","Patient");
+        }
+
+
+
 
         public IActionResult GetAll()
         {
