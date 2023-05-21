@@ -18,10 +18,12 @@
 			<div class="loginmodal-container">
 				<h1>Giriş yapın</h1><br>
 				<form>
-					<input type="text" name="email" placeholder="E-postanızı Giriniz">
-					<input type="password" name="password" placeholder="Şifrenizi Giriniz">
+				@using (Html.BeginForm("Register", "Auth", FormMethod.Post, new { enctype = "multipart/form-data" })) {
+
+					<input type="text" name="Mail" placeholder="E-postanızı Giriniz">
+					<input type="password" name="Password" placeholder="Şifrenizi Giriniz">
 					<input type="submit" name="login" class="login loginmodal-submit" value="Giriş Yap">
-					<li class="nav-item active"><a class="nav-link" @Html.ActionLink("Test - Hasta Panel", "PatientPanel")</a></li>
+				}
 				</form>
 			</div>
 		</div>
