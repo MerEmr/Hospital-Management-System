@@ -1,4 +1,5 @@
-﻿using HospitalManagementSystem.DataAccess.Concrete;
+﻿using HospitalManagementSystem.Core.Abstract.Services;
+using HospitalManagementSystem.DataAccess.Concrete;
 using HospitalManagementSystem.Entities.Concrete;
 using HospitalManagementSystem.UI.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -10,58 +11,41 @@ namespace HospitalManagementSystem.UI.Controllers
     public class PatientController : Controller
     {
         private readonly HospitalDbContext hospitalDbContext;
+        private readonly IUserService _userService;
 
-        public PatientController(HospitalDbContext hospitalDbContext)
+        public PatientController(HospitalDbContext hospitalDbContext, IUserService userService)
         {
             this.hospitalDbContext = hospitalDbContext;
+            this._userService = userService;
         }
         [HttpGet]
         public async Task<IActionResult> PatientList()
         {
             var patients = await hospitalDbContext.Users
-                .Where(u => u.RoleId == 3 ) // Filter by RoleId == 3
+                .Where(u => u.RoleId == 3) // Filter by RoleId == 3
                 .ToListAsync();
-          
+
             return View(patients);
         }
         public IActionResult PatientOperations()
         {
             return View();
         }
-        [HttpPost]
-        public async Task<IActionResult> Add(UserModel addUserRequest)
-        {
-            if (string.IsNullOrWhiteSpace(addUserRequest.Firstname) ||
-                string.IsNullOrWhiteSpace(addUserRequest.Lastname) ||
-                string.IsNullOrWhiteSpace(addUserRequest.Mail))
-            {
-                ViewBag.ErrorMessage = "Lütfen boşlukları doldurunuz.";
-                return View("PatientOperations");
-            }
-            else
-            {
-                var doctor = new User()
-                {
-                    Id = addUserRequest.Id,
-                    FirstName = addUserRequest.Firstname,
-                    LastName = addUserRequest.Lastname,
-                    Password = addUserRequest.Password,
-                    Mail = addUserRequest.Mail,
-                    TCIdNo = addUserRequest.TcIdNo,
-                    RoleId = 3,
-                };
 
-                await hospitalDbContext.Users.AddAsync(doctor);
-                await hospitalDbContext.SaveChangesAsync();
-                TempData["SuccessMessage"] = "Kayıt Başarılı";
-                return RedirectToAction("PatientOperations");
-            }
+        [HttpPost]
+        public IActionResult Add(User user)
+        {
+            user.RoleId = 0;
+            _userService.Add(user);
+            TempData["SuccessMessage"] = "Kayıt Başarılı";
+            return RedirectToAction("PatientOperations");
+
         }
 
         [HttpGet]
         public async Task<IActionResult> PatientView(int id)
         {
-            var patient = await hospitalDbContext.Users.FirstOrDefaultAsync(x => x.Id == id);
+            var patient = await hospitalDbContext.Users!.FirstOrDefaultAsync(x => x.Id == id);
             if (patient != null)
             {
                 var viewModel = new UpdateModel()
