@@ -1,0 +1,34 @@
+﻿@model IEnumerable<HospitalManagementSystem.Entities.Concrete.Appointment>
+@{
+    ViewData["Title"] = "HistoryAppointmentByUser";
+    Layout = "~/Views/Shared/PatientPanel.cshtml";
+}
+
+ <h2 style="margin-left: 100px" class="mb-2 title-color">Geçmiş Randevularınız</h2>
+    <br /><br />
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>Randevu Tarihi</th>
+                    <th>Randevu Saati</th>
+                    <th>Bölüm</th>
+                    <th>Doktor</th>
+                    <th>Açıklama</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.DateOfAppointment</td>
+                    <td>08.30</td>
+                    <td>Ortopedi</td>
+                    <td>@item.DoctorId</td>
+                    <td>Kontroller yapıldı</td>
+                </tr>
+            
+            }
+            <tbody>
+        </table>
+    </div>

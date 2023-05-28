@@ -25,7 +25,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Hastanın Medikal Önizlemesi</h4>
+                                <h4 class="card-title">Medikal Listesi</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -33,12 +33,12 @@
                                            class="table table-striped">
                                         <thead>
                                         <tr>
-                                            <th>Güncelle&nbsp;&&nbsp;Sil</th>
-                                            <th>Randevu Sahibi</th>
-                                            <th>Randevu Adı</th>
-                                            <th>Randevu Tarihi</th>
-                                            <th>Açıklama</th>
-                                            <th>Doktor Adı ve Soyadı</th>
+                                            <th>İncele&nbsp;&&nbsp;Sil</th>
+                                            <th>UserId</th>
+                                            <th>Medication</th>
+                                            <th>Diagnosis</th>
+                                            <th>Description</th>
+                                           
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -46,7 +46,7 @@
                                     {
                                               <tr data-id="@item.Id">
                                             <td style="width: 100px">
-                                                <a class="btn btn-outline-success btn-sm edit"
+                                                <a class="btn btn-outline-success btn-sm edit" href="/Medical/HistoryByUser/@item.UserId"
                                                    title="Edit"
                                                    data-bs-toggle="modal"
                                                    data-bs-target=".bs-example-modal-lg">
