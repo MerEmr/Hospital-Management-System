@@ -23,7 +23,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Doctor Panel</h4>
+                                <h4 class="mb-sm-0">Personal Panel</h4>
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
@@ -48,7 +48,7 @@
                                             <thead>
                                                 <tr>
 
-                                                    <th>Edit&nbsp;& Active/Passive</th>
+                                                    <th>Edit</th>
                                                     <th>FirstName</th>
                                                     <th>LastName</th>
                                                     <th>Tc Id Number</th>
@@ -60,16 +60,10 @@
                                             {
                                                     <tr data-id="@personal.Id">
                                                     <td style="width: 100px">
-                                                        <a href="/Personal/PersonalView/@personal.Id" class="btn btn-outline-success btn-sm edit"
+                                                        <a href="/Personal/PersonalView/@personal.Id" class="btn btn-outline-danger btn-sm edit"
                                                            title="Düzenle"
                                                            data-id="@personal.Id">
                                                             <i class="fas fa-pencil-alt"></i>
-                                                        </a>
-
-                                                        <a class="btn btn-outline-danger btn-sm edit"
-                                                           data-bs-toggle="modal"
-                                                           data-bs-target="#deletemodal">
-                                                            <i class="fas fa-power-off"></i>
                                                         </a>
                                                     </td>
 
@@ -108,7 +102,7 @@
                                 <div class="col-md-12">
                                     <div class="card">
                                         <div class="card-header">
-                                            <h4 class="card-title">Update Doctor</h4>
+                                            <h4 class="card-title">Update Personal</h4>
                                         </div>
 
                                         <div class="card-body">
@@ -116,14 +110,14 @@
                                                 <div class="col-md-6">
                                                     <div class="mt-1">
                                                         <label class=" col-form-label">FirstName</label>
-                                                        <input type="text" class="form-control" id="txtDoctorNameModal">
+                                                        <input type="text" class="form-control" id="txtPersonalNameModal">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="mt-1">
                                                         <label class=" col-form-label">LastName</label>
-                                                        <input type="text" class="form-control" id="txtDoctorLastnameModal"
-                                                               name="txtDoctorLastname">
+                                                        <input type="text" class="form-control" id="txtPersonalLastnameModal"
+                                                               name="txtPersonalLastname">
                                                     </div>
                                                 </div>
                                             </div>
@@ -131,15 +125,15 @@
                                                 <div class="col-md-6">
                                                     <div class="mt-1">
                                                         <label class=" col-form-label">UserName</label>
-                                                        <input type="text" class="form-control" id="txtDoctorUsernameModal"
-                                                               name="txtDoctorUsername">
+                                                        <input type="text" class="form-control" id="txtPersonalUsernameModal"
+                                                               name="txtPersonalUsername">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="mt-1">
                                                         <label class=" col-form-label">Mail</label>
-                                                        <input type="text" class="form-control" id="txtDoctorMailModal"
-                                                               name="txtDoctorMail">
+                                                        <input type="text" class="form-control" id="txtPersonalMailModal"
+                                                               name="txtPersonalMail">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -170,44 +164,7 @@
                     </div><!-- /.modal-dialog -->
                 </div><!-- /.modal -->
             </div><!-- /.modal -->
-            <!-- End Page-content -->
-            <div id="deletemodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                 aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header bg-info ">
-                            <h5 class="modal-title text-white" id="myModalLabel">
-                                Registration Status will be changed
-                                !
-                            </h5>
-
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="modal-body text-center ">
-                                <h3 class="modal-rptcause-name">ALERT!</h3>
-                                <h4 class="grupTitle">Doctor activity status will be changed</h4>
-                            </div>
-                            <div class="modal-footer">
-
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-                                    Close
-                                </button>
-                                <input type="submit" id="btnPersonelSilModal" name="btnPersonelSilModal"
-                                       class="btn btn-success"
-                                       value="Change">
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div>
-        </div>
-        <!-- end main content-->
     </div>
-    <!-- END layout-wrapper -->
-    <!-- Right Sidebar -->
-  
-
+    </div>
 </body>
 </html>

@@ -48,12 +48,11 @@
                                                class="table table-striped">
                                             <thead>
                                             <tr>
-                                                <th>Edit&nbsp;& </th>
-                                                <th>Active/Passive</th>
-                                                <th>Id</th>
+                                                <th>Edit&nbsp; </th>
+                                              
                                                 <th>FirstName</th>
                                                 <th>LastName</th>
-                                                <th>Tc</th>
+                                                <th>TcID</th>
                                                 <th>Email</th>
                                             </tr>
                                             </thead>
@@ -63,22 +62,15 @@
                                                 <tr>
                                                     <td style="width: 100px">
 
-                                                        <a href="/Doctor/View/@doctor.Id" class="btn btn-outline-success btn-sm edit"
+                                                        <a href="/Doctor/View/@doctor.Id" class="btn btn-outline-danger btn-sm edit"
                                                            title="Düzenle"
                                                            data-id="@doctor.Id">
                                                             <i class="fas fa-pencil-alt"></i>
                                                         </a>
 
                                                     </td>
-                                                    <td>
-                                                        <a class="btn btn-outline-danger btn-sm edit" asp-controller="Doctor" asp-action="Delete"
-                                                           data-id="@doctor.Id">
 
-                                                            <i class="fas fa-trash"></i>
-                                                        </a>
-                                                    </td>
-
-                                                    <td>@(doctor.Id ?? "N/A")</td>
+                                                    
                                                     <td>@(doctor.FirstName ?? "N/A")</td>
                                                     <td>@(doctor.LastName ?? "N/A")</td>
                                                     <td>@doctor.TCIdNo</td>
@@ -96,87 +88,7 @@
 
                 </div> <!-- container-fluid -->
             </div>
-            <!-- End Page-content -->
-            <div id="editModal" name="editModal" class="modal fade bs-example-modal-lg" tabindex="-1"
-                 role="dialog" aria-labelledby="myExtraLargeModalLabel"
-                 aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="myExtraLargeModalLabel">
-                                Edit Panel
-                            </h5>
-                            <button type="button" class="btn-close"
-                                    data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h4 class="card-title">Update Doctor</h4>
-                                        </div>
 
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="mt-1">
-                                                        <label class=" col-form-label">FirstName</label>
-                                                        <input type="text" class="form-control" id="txtDoctorNameModal" name="txtDoctorNameModal">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mt-1">
-                                                        <label class=" col-form-label">LastName</label>
-                                                        <input type="text" class="form-control" id="txtDoctorLastnameModal"
-                                                               name="txtDoctorLastnameModal">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="mt-1">
-                                                        <label class=" col-form-label">UserName</label>
-                                                        <input type="text" class="form-control" id="txtDoctorUsernameModal" name="txtDoctorUsernameModal">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mt-1">
-                                                        <label class=" col-form-label">Mail</label>
-                                                        <input type="text" class="form-control" id="txtDoctorMailModal" name="txtDoctorMailModal" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mt-1">
-                                                        <label class=" col-form-label">TC Id No</label>
-                                                        <input type="text" class="form-control" id="txtTcIdNoModal"
-                                                               name="txtTcIdNoModal">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mt-1">
-                                                        <label class=" col-form-label">Password</label>
-                                                        <input class="form-control" type="password" id="txtPasswordModal" name="txtPassword">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- end card -->
-                                </div>
-                            </div>
-                        </div><!-- /.modal-content -->
-                        <div class="card-footer d-grid">
-                            <button type="submit"
-                                    class="btn btn-success btn-block waves-effect waves-light">
-                                <i class="ri-check-line align-middle me-2"></i> Update
-                            </button>
-                        </div>
-                    </div><!-- /.modal-dialog -->
-                </div><!-- /.modal -->
-            </div><!-- /.modal -->
-            <!-- End Page-content -->
-     
         </div>
         <!-- end main content-->
     </div>

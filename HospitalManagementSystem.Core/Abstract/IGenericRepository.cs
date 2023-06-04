@@ -14,7 +14,7 @@ namespace HospitalManagementSystem.Core.Abstract
 
         T GetById(int id);
         IEnumerable<T> GetAll();
-        IEnumerable<T> GetAll(params Expression<Func<T, object>>[] includeProperties)
+        IEnumerable<T> GetAll(params Expression<Func<T, object>>[] includeProperties);
         T? Find(Expression<Func<T, bool>> expression);
         void Add(T entity);
         void Remove(T entity);
