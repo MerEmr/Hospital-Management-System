@@ -19,30 +19,43 @@ namespace HospitalManagementSystem.UI.Controllers
             return View();
         }
 
-        [HttpGet]
-        public IActionResult Login()
-        {
-            return View();
-        }
+   
 
         [HttpPost]
         public IActionResult Login(User user)
         {
+            var findUser = _userService.GetById(user.Id);
             
-            return View();
+            if (findUser != null)
+            {
+                if (findUser.RoleId == 1) //Admin
+                {
+                    return RedirectToAction("Index","Admin");
+                }
+                else if (findUser.RoleId == 2)  //Doktor
+                {
+                    return RedirectToAction("GetAll", "Appointment");
+                }
+                else if (findUser.RoleId == 3) //Hasta
+                {
+                    return RedirectToAction("AddAppointment", "Appointment");
+                }
+               
+            }
+
+            return RedirectToAction("Login","Auth");
         }
 
-        [HttpGet]
-        public IActionResult Register()
-        {
-            return View();
-        }
 
         [HttpPost]
         public IActionResult Register(User user)
         {
-            _userService.Add(user);
-            return View();
+            if (user != null)
+            {
+                user.RoleId = 3;
+                _userService.Add(user);
+            }
+            return RedirectToAction("Login","Auth");
         }
 
     }

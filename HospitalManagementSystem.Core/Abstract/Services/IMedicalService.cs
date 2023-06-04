@@ -9,6 +9,6 @@ namespace HospitalManagementSystem.Core.Abstract.Services
 {
     public interface IMedicalService : IGenericService<Medical>
     {
-        Medical GetByUserId(int id);
+        List<Medical> GetByUserId(int id);
     }
 }

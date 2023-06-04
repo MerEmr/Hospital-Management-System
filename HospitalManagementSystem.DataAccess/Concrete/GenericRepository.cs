@@ -48,6 +48,19 @@ namespace HospitalManagementSystem.DataAccess.Concrete
             return query.AsEnumerable();
         }
 
+        public List<T> List(Expression<Func<T, bool>> where, params Expression<Func<T, object>>[] includeProperties)
+        {
+            IQueryable<T> query = _dbSet;
+
+
+            foreach (var includeProperty in includeProperties)
+            {
+                query = query.Include(includeProperty);
+            }
+
+            return query.Where(where).ToList();
+        }
+
         public T GetById(int id)
         {
             return _dbSet.Find(id)!;
@@ -62,5 +75,7 @@ namespace HospitalManagementSystem.DataAccess.Concrete
         {
             _dbSet.Update(entity);
         }
+
+
     }
 }

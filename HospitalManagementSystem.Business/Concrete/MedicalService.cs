@@ -57,11 +57,11 @@ namespace HospitalManagementSystem.Business.Concrete
             }
         }
 
-        public Medical GetByUserId(int id)
+        public List<Medical> GetByUserId(int id)
         {
             try
             {
-                var medical = _unitOfWork.Medicals.GetAll().Where(x=>x.UserId == id).FirstOrDefault();
+                var medical = _unitOfWork.Medicals.List(x => x.UserId == id,y=>y.User!);
                 return medical!;
             }
             catch (Exception excep)

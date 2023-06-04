@@ -19,5 +19,6 @@ namespace HospitalManagementSystem.Core.Abstract
         void Add(T entity);
         void Remove(T entity);
         void Update(T entity);
+        List<T> List(Expression<Func<T, bool>> where, params Expression<Func<T, object>>[] includeProperties);
     }
 }
