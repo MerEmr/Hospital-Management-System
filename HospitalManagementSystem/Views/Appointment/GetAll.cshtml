@@ -6,51 +6,52 @@
 
 <div class="main-content">
     <div class="page-content">
+     <div class="container">
             <!-- start page title -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0">Randevu Paneli</h4>
-                        </div>
-                    </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                    <h4 class="mb-sm-0">Randevu Paneli</h4>
                 </div>
-                <!-- end page title -->
-                <div class="row">
+            </div>
+        </div>
+        <!-- end page title -->
+        <div class="row">
 
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h4 class="card-title">Randevu Listesi</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table id="datatable-button" name="datatable-button"
-                                           class="table table-striped">
-                                        <thead>
-                                        <tr>
-                                            <th>Güncelle&nbsp;&&nbsp;Sil</th>
-                                            <th>Randevu Sahibi</th>
-                                            <th>Randevu Adı</th>
-                                            <th>Randevu Tarihi</th>
-                                            <th>Açıklama</th>
-                                            <th>Doktor Adı ve Soyadı</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                  @foreach (var item in Model)
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Randevu Listesi</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="datatable-button" name="datatable-button"
+                                   class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Güncelle&nbsp;&&nbsp;Sil</th>
+                                        <th>Randevu Sahibi</th>
+                                        <th>Randevu Adı</th>
+                                        <th>Randevu Tarihi</th>
+                                        <th>Açıklama</th>
+                                        <th>Doktor Adı ve Soyadı</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
                                     {
-                                              <tr data-id="@item.Id">
+                                        <tr data-id="@item.Id">
                                             <td style="width: 100px">
                                                 <a class="btn btn-outline-success btn-sm edit"
-                                                   title="Edit"
-                                                   data-bs-toggle="modal"
-                                                   data-bs-target=".bs-example-modal-lg">
+                                               title="Edit"
+                                               data-bs-toggle="modal"
+                                               data-bs-target=".bs-example-modal-lg">
                                                     <i class="fas fa-pencil-alt"></i>
                                                 </a>
-                                              
+
                                                 <a class="btn btn-outline-danger btn-sm edit"
-                                                   data-bs-toggle="modal"
-                                                   data-bs-target="#deletemodal">
+                                               data-bs-toggle="modal"
+                                               data-bs-target="#deletemodal">
                                                     <i class="fas fa-power-off"></i>
                                                 </a>
                                             </td>
@@ -61,121 +62,125 @@
                                             <td data-field="dataDoctorName">@item.DoctorId</td>
                                         </tr>
                                     }
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- end col -->
-                </div>
-          <!-- container-fluid -->
-        </div>
-        <!-- End Page-content -->
-        <div id="editModal" name="editModal" class="modal fade bs-example-modal-lg" tabindex="-1"
-             role="dialog" aria-labelledby="myExtraLargeModalLabel"
-             aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="myExtraLargeModalLabel">
-                            Güncelleme Paneli </h5>
-                        <button type="button" class="btn-close"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h4 class="card-title">Randevu Güncelle</h4>
-                                    </div>
-
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="mt-1">
-                                                    <label class=" col-form-label">Randevu Sahibi</label>
-                                                    <input type="text" name="UserId" class="form-control" id="txtDoctorNameModal">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="mt-1">
-                                                    <label  class=" col-form-label">Randevu Adı</label>
-                                                    <input type="text" class="form-control" id="txtDoctorLastnameModal"
-                                                           name="Name">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="mt-1">
-                                                    <label class=" col-form-label">Randevu Tarihi</label>
-                                                    <input type="text" class="form-control" id="txtDoctorUsernameModal"
-                                                           name="DateOfAppointment">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="mt-1">
-                                                    <label class=" col-form-label">Açıklama</label>
-                                                    <input type="text" class="form-control" id="txtDoctorMailModal"
-                                                           name="Description">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="mt-1">
-                                                    <label class=" col-form-label">Doktor Adı ve Soyadı</label>
-                                                    <input type="text" class="form-control" id="txtTcIdNoModal"
-                                                           name="DoctorId">
-                                                </div>
-                                            </div>
-                                          
-                                        </div>
-                                    </div>
-                                </div><!-- end card -->
-                            </div>
-                        </div>
-                    </div><!-- /.modal-content -->
-                    <div class="card-footer d-grid">
-                        <button type="submit"
-                                class="btn btn-success btn-block waves-effect waves-light">
-                            <i class="ri-check-line align-middle me-2"></i> Güncelle
-                        </button>
-                    </div>
-                </div><!-- /.modal-dialog -->
-            </div><!-- /.modal -->
-        </div><!-- /.modal -->
-        <!-- End Page-content -->
-        <div id="deletemodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-             aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header bg-info ">
-                        <h5 class="modal-title text-white" id="myModalLabel">Registration Status will be changed
-                            !</h5>
-
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="modal-body text-center ">
-                            <h3 class="modal-rptcause-name">Uyarı!</h3>
-                            <h4 class="grupTitle">Appointment activity status will be changed</h4>
-                        </div>
-                        <div class="modal-footer">
-
-                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-                                Kapat
-                            </button>
-                            <input type="submit" id="btnPersonelSilModal" name="btnPersonelSilModal"
-                                   class="btn btn-success"
-                                   value="Change">
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-            </div><!-- /.modal-content -->
+            </div> <!-- end col -->
         </div>
+        <!-- container-fluid -->
+     </div>
     </div>
+    <!-- End Page-content -->
+    <div id="editModal" name="editModal" class="modal fade bs-example-modal-lg" tabindex="-1"
+         role="dialog" aria-labelledby="myExtraLargeModalLabel"
+         aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myExtraLargeModalLabel">
+                        Güncelleme Paneli
+                    </h5>
+                    <button type="button" class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Randevu Güncelle</h4>
+                                </div>
+
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mt-1">
+                                                <label class=" col-form-label">Randevu Sahibi</label>
+                                                <input type="text" name="UserId" class="form-control" id="txtDoctorNameModal">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mt-1">
+                                                <label class=" col-form-label">Randevu Adı</label>
+                                                <input type="text" class="form-control" id="txtDoctorLastnameModal"
+                                                       name="Name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mt-1">
+                                                <label class=" col-form-label">Randevu Tarihi</label>
+                                                <input type="text" class="form-control" id="txtDoctorUsernameModal"
+                                                       name="DateOfAppointment">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mt-1">
+                                                <label class=" col-form-label">Açıklama</label>
+                                                <input type="text" class="form-control" id="txtDoctorMailModal"
+                                                       name="Description">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mt-1">
+                                                <label class=" col-form-label">Doktor Adı ve Soyadı</label>
+                                                <input type="text" class="form-control" id="txtTcIdNoModal"
+                                                       name="DoctorId">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div><!-- end card -->
+                        </div>
+                    </div>
+                </div><!-- /.modal-content -->
+                <div class="card-footer d-grid">
+                    <button type="submit"
+                            class="btn btn-success btn-block waves-effect waves-light">
+                        <i class="ri-check-line align-middle me-2"></i> Güncelle
+                    </button>
+                </div>
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </div><!-- /.modal -->
+    <!-- End Page-content -->
+    <div id="deletemodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-info ">
+                    <h5 class="modal-title text-white" id="myModalLabel">
+                        Registration Status will be changed
+                        !
+                    </h5>
+
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="col-md-12">
+                    <div class="modal-body text-center ">
+                        <h3 class="modal-rptcause-name">Uyarı!</h3>
+                        <h4 class="grupTitle">Appointment activity status will be changed</h4>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                            Kapat
+                        </button>
+                        <input type="submit" id="btnPersonelSilModal" name="btnPersonelSilModal"
+                               class="btn btn-success"
+                               value="Change">
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div>
+</div>
 
 
 
