@@ -34,6 +34,7 @@ namespace HospitalManagementSystem.UI.Controllers
         {
             if (appointment != null)
             {
+                appointment.UserId = 3;
                 _appointmentService.Add(appointment);
             }
             return RedirectToAction("GetAll","Appointment");

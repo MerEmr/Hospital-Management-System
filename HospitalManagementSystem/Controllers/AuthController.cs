@@ -24,7 +24,7 @@ namespace HospitalManagementSystem.UI.Controllers
         [HttpPost]
         public IActionResult Login(User user)
         {
-            var findUser = _userService.GetById(user.Id);
+            var findUser = _userService.GetByMail(user.Mail);
             
             if (findUser != null)
             {

@@ -9,5 +9,6 @@ namespace HospitalManagementSystem.Core.Abstract.Services
 {
     public interface IUserService : IGenericService<User>
     {
+        User GetByMail(string mail);
     }
 }

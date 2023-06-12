@@ -17,14 +17,13 @@
 			<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
 			<div class="loginmodal-container">
 				<h1>Giriş yapın</h1><br>
-				<form>
 				@using (Html.BeginForm("Login", "Auth", FormMethod.Post, new { enctype = "multipart/form-data" })) {
 
 					<input type="text" name="Mail" placeholder="E-postanızı Giriniz">
 					<input type="password" name="Password" placeholder="Şifrenizi Giriniz">
-					
+										<button type="submit" class="login loginmodal-submit">Giriş Yap</button>
+
 				}
-				</form>
 			</div>
 		</div>
 	</div>

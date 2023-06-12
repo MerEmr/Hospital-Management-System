@@ -57,6 +57,20 @@ namespace HospitalManagementSystem.Business.Concrete
             }
         }
 
+        public User GetByMail(string mail)
+        {
+            try
+            {
+                var user = _unitOfWork.Users.Find(x=>x.Mail == mail );
+                return user;
+            }
+            catch (Exception excep)
+            {
+                throw new Exception("Hata oluştu: " + excep.Message);
+            }
+        }
+
+
 
         public void Remove(int id)
         {
