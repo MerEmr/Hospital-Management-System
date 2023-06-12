@@ -23,7 +23,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Doctor Panel</h4>
+                                <h4 class="mb-sm-0">Patient Panel</h4>
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Forms</a></li>
@@ -48,13 +48,11 @@
                                                class="table table-striped">
                                             <thead>
                                                 <tr>
-
-                                                    <th>Edit&nbsp;& Active/Passive</th>
+                                                    <th>Edit</th>
                                                     <th>FirstName</th>
                                                     <th>LastName</th>
                                                     <th>Tc Id Number</th>
                                                     <th>Email</th>
-
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -63,15 +61,10 @@
                                                 <tr data-id="@patient.Id">
                                                     <td style="width: 100px">
                                                        
-                                                        <a href="/Patient/PatientView/@patient.Id" class="btn btn-outline-success btn-sm edit"
+                                                        <a href="/Patient/PatientView/@patient.Id" class="btn btn-outline-danger btn-sm edit"
                                                            title="Düzenle"
                                                        data-id="@patient.Id">
                                                             <i class="fas fa-pencil-alt"></i>
-                                                        </a>
-                                                        <a class="btn btn-outline-danger btn-sm edit"
-                                                           data-bs-toggle="modal"
-                                                           data-bs-target="#deletemodal">
-                                                            <i class="fas fa-power-off"></i>
                                                         </a>
                                                     </td>
                                                     <td>@(patient.FirstName ?? "N/A")</td>
@@ -90,124 +83,7 @@
 
                 </div> <!-- container-fluid -->
             </div>
-            <!-- End Page-content -->
-            <div id="editModal" name="editModal" class="modal fade bs-example-modal-lg" tabindex="-1"
-                 role="dialog" aria-labelledby="myExtraLargeModalLabel"
-                 aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="myExtraLargeModalLabel">
-                                Edit Panel
-                            </h5>
-                            <button type="button" class="btn-close"
-                                    data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h4 class="card-title">Update Patient</h4>
-                                        </div>
-
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="mt-1">
-                                                        <label class=" col-form-label">FirstName</label>
-                                                        <input type="text" class="form-control" id="txtpatientNameModal">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mt-1">
-                                                        <label class=" col-form-label">LastName</label>
-                                                        <input type="text" class="form-control" id="txtpatientLastnameModal"
-                                                               name="txtDoctorLastname">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="mt-1">
-                                                        <label class=" col-form-label">UserName</label>
-                                                        <input type="text" class="form-control" id="txtDoctorUsernameModal"
-                                                               name="txtDoctorUsername">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mt-1">
-                                                        <label class=" col-form-label">Mail</label>
-                                                        <input type="text" class="form-control" id="txtDoctorMailModal"
-                                                               name="txtDoctorMail">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mt-1">
-                                                        <label class=" col-form-label">TC Id No</label>
-                                                        <input type="text" class="form-control" id="txtTcIdNoModal"
-                                                               name="txtTcIdNo">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="mt-1">
-                                                        <label class=" col-form-label">Password</label>
-                                                        <input class="form-control" type="password" id="txtPasswordModal" name="txtPassword">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- end card -->
-                                </div>
-                            </div>
-                        </div><!-- /.modal-content -->
-                        <div class="card-footer d-grid">
-                            <button type="submit"
-                                    class="btn btn-success btn-block waves-effect waves-light">
-                                <i class="ri-check-line align-middle me-2"></i> Update
-                            </button>
-                        </div>
-                    </div><!-- /.modal-dialog -->
-                </div><!-- /.modal -->
-            </div><!-- /.modal -->
-            <!-- End Page-content -->
-            <div id="deletemodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                 aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header bg-info ">
-                            <h5 class="modal-title text-white" id="myModalLabel">
-                                Registration Status will be changed
-                                !
-                            </h5>
-
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="modal-body text-center ">
-                                <h3 class="modal-rptcause-name">ALERT!</h3>
-                                <h4 class="grupTitle">Doctor activity status will be changed</h4>
-                            </div>
-                            <div class="modal-footer">
-
-                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-                                    Close
-                                </button>
-                                <input type="submit" id="btnPersonelSilModal" name="btnPersonelSilModal"
-                                       class="btn btn-success"
-                                       value="Change">
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- /.modal-content -->
-            </div>
         </div>
-        <!-- end main content-->
-   
-
-    <!-- Right Sidebar -->
 
 
 </body>

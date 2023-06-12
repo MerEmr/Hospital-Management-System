@@ -93,26 +93,26 @@ namespace HospitalManagementSystem.UI.Controllers
                 patient.Mail = model.Mail;
                 patient.TCIdNo = model.TcIdNo;
                 await hospitalDbContext.SaveChangesAsync();
-                HttpContext.Session.SetString("SuccessMessage", "Güncelleme başarıyla tamamlandı!");
+              
                 return RedirectToAction("PersonalList");
             }
-
+            HttpContext.Session.SetString("SuccessMessage", "Güncelleme başarıyla tamamlandı!");
             return RedirectToAction("PersonalList");
         }
 
 
+
         [HttpPost]
-        public async Task<IActionResult> Delete(UpdateModel model)
+        public IActionResult Delete(User model)
         {
-            var doctor = hospitalDbContext.Users.Find(model.Id);
-            if (doctor != null)
+            var Personal = hospitalDbContext.Users.Find(model.Id);
+            if (Personal != null)
             {
-                hospitalDbContext.Users.Remove(doctor);
-                await hospitalDbContext.SaveChangesAsync();
+                hospitalDbContext.Users.Remove(Personal);
+                hospitalDbContext.SaveChangesAsync();
                 return RedirectToAction("PersonalList");
             }
             return RedirectToAction("PersonalList");
-
         }
     }
 }

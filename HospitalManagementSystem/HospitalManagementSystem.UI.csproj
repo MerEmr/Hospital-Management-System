@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\DeleteModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Views\Doctor\Index.cshtml" />
   </ItemGroup>
 

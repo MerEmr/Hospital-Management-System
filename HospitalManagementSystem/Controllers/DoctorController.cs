@@ -107,17 +107,20 @@ namespace HospitalManagementSystem.UI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Delete(UpdateModel model)
+        public IActionResult Delete(User model)
         {
-            var doctor = hospitalDbContext.Users.Find(model.Id);
-            if (doctor != null)
+            var Doctor = hospitalDbContext.Users.Find(model.Id);
+            if (Doctor != null)
             {
-                hospitalDbContext.Users.Remove(doctor);
-                await hospitalDbContext.SaveChangesAsync();
+                hospitalDbContext.Users.Remove(Doctor);
+                hospitalDbContext.SaveChangesAsync();
                 return RedirectToAction("DoctorList");
             }
             return RedirectToAction("DoctorList");
 
         }
+
+
+
     }
 }
