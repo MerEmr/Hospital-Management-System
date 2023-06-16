@@ -22,7 +22,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h2 class="mb-sm-0">Doctor Panel</h2>
+                                    <h2 class="mb-sm-0">Doktor Düzenleme Paneli </h2>
                                 </div>
                             </div>
                         </div>
@@ -31,7 +31,7 @@
                           
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Update Doctor</h4>
+                                    <h4 class="card-title">Doktoru Güncelle&nbsp; & &nbsp; Doktoru Kaldır </h4>
                                 </div>
 
                                 <div class="card-body">
@@ -46,13 +46,13 @@
 
                                         <div class="col-md-6">
                                             <div class="mt-2">
-                                                <label class="col-form-label">First Name</label>
+                                                <label class="col-form-label">Adı</label>
                                                 <input type="text" class="form-control" id="txtDoctorFirstname" asp-for="Firstname">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="mt-2">
-                                                <label class="col-form-label">Last Name</label>
+                                                <label class="col-form-label">Soyadı</label>
                                                 <input type="text" class="form-control" id="txtDoctorLasrname" asp-for="Lastname">
                                             </div>
                                         </div>
@@ -60,7 +60,7 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="mt-2">
-                                                <label class="col-form-label">TC Id No</label>
+                                                <label class="col-form-label">TC Kimlik No</label>
                                                 <input type="number" class="form-control" id="txtTcIdNo" asp-for="TcIdNo">
                                             </div>
                                         </div>
@@ -68,14 +68,14 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="mt-2">
-                                                <label class="col-form-label">Mail</label>
+                                                <label class="col-form-label">Email</label>
                                                 <input type="text" class="form-control" id="txtDoctorMail" placeholder="Ogmerem@gmail.com" asp-for="Mail">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <button class="btn btn-primary mt-4 off" type="submit" style="width: 100%;">SAVE</button>
+                                            <button class="btn btn-primary mt-4 off" type="submit" style="width: 100%;"><i class="fas fa-pencil-alt"></i>&nbsp;GÜNCELLE</button>
                                         </div>
                                         <div class="col-md-4">
                                             <button class="btn btn-danger mt-4 off" type="submit" style="width: 100%;" asp-action="Delete" asp-controller="Doctor">Delete</button>
