@@ -50,6 +50,7 @@ namespace HospitalManagementSystem.UI.Controllers
                 var appointmentList = _appointmentService.GetAll();
                 if (appointmentList != null)
                 {
+                    
                     return View(appointmentList);
                 }
             }

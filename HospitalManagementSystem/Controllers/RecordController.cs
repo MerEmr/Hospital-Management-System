@@ -7,10 +7,12 @@ namespace HospitalManagementSystem.UI.Controllers
     public class RecordController : Controller
     {
         private readonly IRecordService _recordService;
+        private readonly IUserService _userService;
 
-        public RecordController(IRecordService recordService)
+        public RecordController(IRecordService recordService,IUserService userService)
         {
             _recordService = recordService;
+            _userService = userService;
         }
 
         public IActionResult Index()
@@ -27,6 +29,7 @@ namespace HospitalManagementSystem.UI.Controllers
         [HttpGet]
         public IActionResult AddRecord()
         {
+            ViewBag.User = _userService.GetAll();
             return View();
         }
 

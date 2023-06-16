@@ -55,11 +55,11 @@
                                                     <i class="fas fa-power-off"></i>
                                                 </a>
                                             </td>
-                                            <td data-field="dataAppointmentUsers">@item.UserId</td>
+                                            <td data-field="dataAppointmentUsers">@item.User!.FirstName @item.User.LastName</td>
                                             <td data-field="dataAppointmenName">@item.Name</td>
                                             <td data-field="dataAppointmenDate">@item.DateOfAppointment</td>
                                             <td data-field="dataDescription">@item.Description</td>
-                                            <td data-field="dataDoctorName">@item.DoctorId</td>
+                                            <td data-field="dataDoctorName">Doktor Doktor</td>
                                         </tr>
                                     }
                                 </tbody>

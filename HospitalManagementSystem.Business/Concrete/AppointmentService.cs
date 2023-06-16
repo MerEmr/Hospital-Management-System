@@ -35,7 +35,7 @@ namespace HospitalManagementSystem.Business.Concrete
         {
             try
             {
-                var appointmentList = _unitOfWork.Appointments.GetAll();
+                var appointmentList = _unitOfWork.Appointments.GetAll(x=>x.User!);
                 return appointmentList;
             }
             catch (Exception excep)
