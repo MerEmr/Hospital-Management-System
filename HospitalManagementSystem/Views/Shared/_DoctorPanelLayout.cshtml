@@ -31,72 +31,16 @@
 
 
     <header id="page-topbar">
-        <div class="navbar-header">
-            <div class="d-flex">
-                <!-- LOGO -->
-                <div class="navbar-brand-box text-center">
-                    <a href="index.html" class="logo logo-dark">
-                        <span class="logo-sm">
-                            <img src="/assets/images/logo-sm.png" alt="logo-sm-dark" height="22">
-                        </span>
-                        <span class="logo-lg">
-                            <img src="/assets/images/logo-dark.png" alt="logo-dark" height="24">
-                        </span>
-                    </a>
-
-                    <a href="index.html" class="logo logo-light">
-                        <span class="logo-sm">
-                            <img src="/assets/images/logo-sm.png" alt="logo-sm-light" height="22">
-                        </span>
-                        <span class="logo-lg">
-                            <img src="/assets/images/logo-light.png" alt="logo-light" height="24">
-                        </span>
-                    </a>
-                </div>
-                <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect"
-                        id="vertical-menu-btn">
-                    <i class="ri-menu-2-line align-middle"></i>
-                </button>
-
-            </div>
-            <div class="d-flex">
-                <div class="dropdown d-inline-block d-lg-none ms-2">
-                    <button type="button" class="btn header-item noti-icon waves-effect"
-                            id="page-header-search-dropdown"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="ri-search-line"></i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
-                         aria-labelledby="page-header-search-dropdown">
-
-                        <form class="p-3">
-                            <div class="mb-3 m-0">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search ...">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-primary" type="submit">
-                                            <i class="ri-search-line"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="dropdown d-none d-lg-inline-block ms-1">
-                    <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
-                        <i class="ri-fullscreen-line"></i>
-                    </button>
-                </div>
-      
-
-                <div class="dropdown d-inline-block">
-                    <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
-                        <i class="mdi mdi-cog"></i>
-                    </button>
-                </div>
-
-            </div>
+        <div style="background-color:#1B2C3F" class="navbar-header">
+            <!-- LOGO -->
+            <img style="padding-left: 25px" src="~/assets/images/logo-sm.png">
+            <a style="color:white;
+                             font-size:20px;
+                             border:2px solid white;
+                             padding:10px;
+                             border-radius:10px" class="button" href="/Home/">
+                <i class="ri-shut-down-line align-middle me-1 text-danger"></i> <b>Çıkış Yap</b>
+            </a>
         </div>
     </header>
 
@@ -112,30 +56,30 @@
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="mdi mdi-page-layout-header"></i>
-                            <span>Appointment Menu</span>
+                            <span>Randevu Menüsü</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="/Appointment/GetAll">Appointment List</a></li>
-                             <li><a href="/Appointment/AddAppointment">Add Appointment</a></li>
+                            <li><a href="/Appointment/GetAll">Randevu Listesi</a></li>
+                             <li><a href="/Appointment/AddAppointment">Randevu Ekle</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="mdi mdi-gradient"></i>
-                            <span>Record Menu</span>
+                            <span>Medikal Geçmiş Menüsü</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="/Record/AddRecord">Create Record</a></li>
-                            <li><a href="/Record/GetAll">Record List</a></li>
+                            <li><a href="/Record/AddRecord">Medikal Geçmiş Oluştur</a></li>
+                            <li><a href="/Record/GetAll">Medikal Geçmiş Listesi</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="mdi mdi-gradient"></i>
-                            <span>Medical Menu</span>
+                            <span>Medikal Menü</span>
                         </a>
                         <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="/Medical/HistoryByUser/3">Medical List</a></li>
+                            <li><a href="/Medical/HistoryByUser/3">Medikal Liste</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -153,7 +97,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0">Doctor Panel</h4>
+                            <h4 class="mb-sm-0">Doktor Paneli</h4>
                         </div>
                     </div>
                 </div>
@@ -172,8 +116,7 @@
                     <div class="modal-content">
                         <div class="modal-header bg-info ">
                             <h5 class="modal-title text-white" id="myModalLabel">
-                                Registration Status will be changed
-                                !
+                                Kaydolma durumu değiştirilecektir!
                             </h5>
 
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
@@ -181,13 +124,13 @@
                         </div>
                         <div class="col-md-12">
                             <div class="modal-body text-center ">
-                                <h3 class="modal-rptcause-name">ALERT!</h3>
-                                <h4 class="grupTitle">Doctor activity status will be changed</h4>
+                                <h3 class="modal-rptcause-name">Uyarı!</h3>
+                                <h4 class="grupTitle">Doktor aktivitesi durumu değiştirilecektir!</h4>
                             </div>
                             <div class="modal-footer">
 
                                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-                                    Close
+                                    Kapat
                                 </button>
                                 <input type="submit" id="btnPersonelSilModal" name="btnPersonelSilModal"
                                        class="btn btn-success"
@@ -199,28 +142,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-    <footer class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-6">
-                    <script>document.write(new Date().getFullYear())</script>
-                    © Upzet.
-                </div>
-                <div class="col-sm-6">
-                    <div class="text-sm-end d-none d-sm-block">
-                        Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
 
     <!-- Right Sidebar -->
     <div class="right-bar">
