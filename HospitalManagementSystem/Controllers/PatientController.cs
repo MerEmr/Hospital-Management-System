@@ -11,12 +11,11 @@ namespace HospitalManagementSystem.UI.Controllers
     public class PatientController : Controller
     {
         private readonly HospitalDbContext hospitalDbContext;
-        private readonly IUserService _userService;
+   
 
         public PatientController(HospitalDbContext hospitalDbContext, IUserService userService)
         {
             this.hospitalDbContext = hospitalDbContext;
-            this._userService = userService;
         }
         [HttpGet]
         public async Task<IActionResult> PatientList()
@@ -33,10 +32,21 @@ namespace HospitalManagementSystem.UI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(User user)
+        public async Task<IActionResult> Add(User addPatientRequest)
         {
-            user.RoleId = 0;
-            _userService.Add(user);
+            var Patient = new User()
+            {
+                Id = addPatientRequest.Id,
+                FirstName = addPatientRequest.FirstName,
+                LastName = addPatientRequest.LastName,
+                Password = addPatientRequest.Password,
+                Mail = addPatientRequest.Mail,
+                TCIdNo = addPatientRequest.TCIdNo,
+                RoleId =3,
+            };
+            await hospitalDbContext.Users.AddAsync(Patient);
+            await hospitalDbContext.SaveChangesAsync();
+
             TempData["SuccessMessage"] = "Kayıt Başarılı";
             return RedirectToAction("PatientOperations");
 
