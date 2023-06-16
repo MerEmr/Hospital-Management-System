@@ -25,7 +25,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">PATIENT PANEL </h4>
+                                <h4 class="mb-sm-0">Hasta Paneli</h4>
                             </div>
                         </div>
                     </div>
@@ -34,44 +34,46 @@
                         <div class="col-md-9 offset-1">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Patient Registration</h4>
+                                    <h4 class="card-title">Hasta Ekle</h4>
                                 </div>
-
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="mt-2">
-                                                <label for="example-password-input" class=" col-form-label">TC Id Number</label>
-                                                <input type="number" class="form-control" id="txtTcId"  asp-for="TCIdNo">
+                                                <label for="example-password-input" class=" col-form-label">
+                                                    TC Id
+                                                    Number
+                                                </label>
+                                                <input type="text" class="form-control" id="txtTcId" name="TCIdNo">
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="mt-2">
                                                 <label for="example-password-input"
                                                        class=" col-form-label">Firstname</label>
-                                                <input type="text" class="form-control" id="txtPt" asp-for="FirstName">
+                                                <input type="text" class="form-control" id="txtPt" name="FirstName">
                                             </div>
                                         </div>
                                         <div class="col-md-3">
                                             <div class="mt-2">
                                                 <label for="example-password-input" class=" col-form-label">LastName</label>
-                                                <input type="text" class="form-control" id="txtPtLastname" asp-for="LastName">
+                                                <input type="text" class="form-control" id="txtPtLastname" name="LastName">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col md-6 mt-2">
-                                            <label for="example-email-input" class="col-form-label">Email</label>
+                                            <label for="example-email-input" class="col-form-label">E-posta</label>
                                             <input class="form-control" type="email" placeholder="Ogmerem@example.com"
                                                    id="txtptEmail" asp-for="Mail">
                                         </div>
                                         <div class="col-md-6 mt-2">
                                             <label for="example-password-input" class="col-form-label">Password</label>
-                                            <input class="form-control" type="password" id="txtPtPassword" placeholder="******" asp-for="Password">
+                                            <input class="form-control" type="password" id="txtPtPassword" placeholder="******" name="Password">
                                         </div>
                                     </div>
 
-                                    <button class="btn btn-primary mt-4 off" type="submit" style="width: 100%;">SAVE</button>
+                                    <button class="btn btn-primary mt-4 off" type="submit" style="width: 100%;">Kaydet</button>
                                 </div>
                             </div><!-- end card -->
                         </div>
@@ -176,22 +178,6 @@
                 <div class="modal-dialog">
                 </div><!-- /.modal-content -->
             </div>
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <script>document.write(new Date().getFullYear())</script>
-                            © Upzet.
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="text-sm-end d-none d-sm-block">
-                                Crafted with <i class="mdi mdi-heart text-danger"></i> by Ogmerem
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-
         </div>
         <!-- end main content-->
     </div>

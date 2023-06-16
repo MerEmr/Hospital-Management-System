@@ -11,17 +11,20 @@
     <title>Giriş Yap | Örnek Sağlık</title>
     <link href="@Url.Content("~/css/SignStyle.css")" rel="stylesheet" type="text/css" />
 </head>
-<body>
+<body style="text-align: center">
 	<div class="modal fade" id="login-modal" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog">
 			<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
 			<div class="loginmodal-container">
-				<h1>Giriş yapın</h1><br>
+				<h1>Giriş Yapın</h1><br>
 				@using (Html.BeginForm("Login", "Auth", FormMethod.Post, new { enctype = "multipart/form-data" })) {
 
 					<input type="text" name="Mail" placeholder="E-postanızı Giriniz">
 					<input type="password" name="Password" placeholder="Şifrenizi Giriniz">
-										<button type="submit" class="login loginmodal-submit">Giriş Yap</button>
+					<button style="border-radius: 10px;
+								   padding-left:20px;
+								   padding-right:20px;
+								   font-size:15px" type="submit" class="login loginmodal-submit">Giriş Yap</button>
 
 				}
 			</div>
