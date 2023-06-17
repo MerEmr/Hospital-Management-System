@@ -17,11 +17,7 @@ namespace HospitalManagementSystem.UI.Controllers
             return View();
         }
 
-        public IActionResult HistoryAppointmentByUser(int id)
-        {
-            var historyAppointment = _appointmentService.GetAll();
-            return View(historyAppointment);
-        }
+   
 
         [HttpGet]
         public IActionResult AddAppointment()
@@ -37,7 +33,7 @@ namespace HospitalManagementSystem.UI.Controllers
                 appointment.UserId = 3;
                 _appointmentService.Add(appointment);
             }
-            return RedirectToAction("GetAll","Appointment");
+            return View();
         }
 
 
